@@ -13,15 +13,15 @@ const config = {
   favicon: 'img/frog_g_64.webp',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
+  url: 'https://bewegung.app',
+  // Set the /bewegung-docs/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/bewegung-docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'plans-coding', // Usually your GitHub org/user name.
-  projectName: 'bewegung', // Usually your repo name.
+  projectName: 'immer-in-bewegung', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -44,7 +44,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/plans-conding/immer-in-bewegung/blob/main/bewegung-docs/',
+            'https://github.com/plans-coding/immer-in-bewegung/blob/main/bewegung-docs/',
         },
         /*blog: {
           showReadingTime: true,
