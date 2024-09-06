@@ -1,0 +1,20 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: bewegung-app-nginx
+    ports:
+      - "2024:80"
+    volumes:
+      - ./www:/www
+      - ./webserver.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+  php:
+    #image: php:8.2-fpm
+    build:
+      context: .
+      dockerfile: Dockerfile-php-yaml
+    container_name: bewegung-app-php
+    volumes:
+      - ./www:/www
+      - ./iib-settings.yml:/www/data/iib-settings.yml

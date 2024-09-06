@@ -1,0 +1,12 @@
+FROM php:8.2-fpm
+
+RUN apt-get update && apt-get install -y \
+    libyaml-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pecl install yaml \
+    && docker-php-ext-enable yaml
+
+COPY ./www /www
+
+WORKDIR /www

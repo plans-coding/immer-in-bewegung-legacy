@@ -1,0 +1,294 @@
+### Add your data source
+trip-data:
+  - provider: google-sheet
+    spreadsheet-id: 1dr8Za7_CvArUK7ZG4Cx6Kv5fXwEtX_i6rmEBFryE5jc  #set null if google sheet is not used
+    spreadsheet-name: IIB Trip Data version 1
+    overview-name: Overview
+    overview-gid: 0 #set null if google sheet is not used
+    events-name: Events
+    events-gid: 230002739 #set null if google sheet is not used
+    map-name: Map
+    map-gid: 19867792 #set null if google sheet is not used
+
+### Change Immich settings
+immich-settings:
+  - immich-server-address: http://localhost:2283/ # Remember last dash /
+
+### Define trip categories
+trip-categories:
+  - category: Abroad
+    category-abbreviation: U
+    category-color: 1d655e
+
+  - category: Domestic
+    category-abbreviation: I
+    category-color: 0b5394
+
+  - category: Attachment trip
+    category-abbreviation: D
+    category-color: C60C30
+
+### Change this only if you want to change country definitions
+countries:
+  - continent: Europe
+    continent-countries:
+      - Albania
+      - Andorra
+      - Austria
+      - Belarus
+      - Belgium
+      - Bosnia and Herzegovina
+      - Bulgaria
+      - Croatia
+      - Cyprus
+      - Czech Republic
+      - Denmark
+      - Estonia
+      - Finland
+      - Finland-Åland
+      - France
+      - Georgia
+      - Germany
+      - Greece
+      - Hungary
+      - Iceland
+      - Ireland
+      - Italy
+      - Kosovo
+      - Latvia
+      - Liechtenstein
+      - Lithuania
+      - Luxembourg
+      - Malta
+      - Moldova
+      - Moldova-Transnistria
+      - Monaco
+      - Montenegro
+      - Netherlands
+      - North Macedonia
+      - Norway
+      - Poland
+      - Portugal
+      - Romania
+      - Russia
+      - San Marino
+      - Serbia
+      - Slovakia
+      - Slovenia
+      - Spain
+      - Sweden
+      - Switzerland
+      - Ukraine
+      - United Kingdom
+      - United Kingdom-Akrotiri and Dhekelia
+      - United Kingdom-Gibraltar
+      - United Kingdom-Jersey
+      - Vatican City
+
+  - continent: Asia
+    continent-countries:
+      - Afghanistan
+      - Armenia
+      - Azerbaijan
+      - Bahrain
+      - Bangladesh
+      - Bhutan
+      - Brunei
+      - Cambodia
+      - China
+      - Cyprus
+      - Georgia
+      - India
+      - Indonesia
+      - Iran
+      - Iraq
+      - Israel
+      - Japan
+      - Jordan
+      - Kazakhstan
+      - Kuwait
+      - Kyrgyzstan
+      - Laos
+      - Lebanon
+      - Malaysia
+      - Maldives
+      - Mongolia
+      - Myanmar
+      - Nepal
+      - North Korea
+      - Oman
+      - Pakistan
+      - Philippines
+      - Qatar
+      - Russia
+      - Saudi Arabia
+      - Singapore
+      - South Korea
+      - Sri Lanka
+      - Syria
+      - Taiwan
+      - Tajikistan
+      - Thailand
+      - Timor-Leste
+      - Turkey
+      - Turkmenistan
+      - United Arab Emirates
+      - Uzbekistan
+      - Vietnam
+      - Yemen
+
+  - continent: North America
+    continent-countries:
+      - Antigua and Barbuda
+      - Bahamas
+      - Barbados
+      - Belize
+      - Canada
+      - Costa Rica
+      - Cuba
+      - Dominica
+      - Dominican Republic
+      - El Salvador
+      - Grenada
+      - Guatemala
+      - Haiti
+      - Honduras
+      - Jamaica
+      - Mexico
+      - Nicaragua
+      - Panama
+      - Saint Kitts and Nevis
+      - Saint Lucia
+      - Saint Vincent and the Grenadines
+      - Trinidad and Tobago
+      - United States
+
+  - continent: South America
+    continent-countries:
+      - Argentina
+      - Bolivia
+      - Brazil
+      - Chile
+      - Colombia
+      - Ecuador
+      - Guyana
+      - Paraguay
+      - Peru
+      - Suriname
+      - Uruguay
+      - Venezuela
+
+  - continent: Africa
+    continent-countries:
+      - Algeria
+      - Angola
+      - Benin
+      - Botswana
+      - Burkina Faso
+      - Burundi
+      - Cabo Verde
+      - Cameroon
+      - Central African Republic
+      - Chad
+      - Comoros
+      - Democratic Republic of the Congo
+      - Djibouti
+      - Egypt
+      - Equatorial Guinea
+      - Eritrea
+      - Eswatini
+      - Ethiopia
+      - Gabon
+      - Gambia
+      - Ghana
+      - Guinea
+      - Guinea-Bissau
+      - Ivory Coast
+      - Kenya
+      - Lesotho
+      - Liberia
+      - Libya
+      - Madagascar
+      - Malawi
+      - Mali
+      - Mauritania
+      - Mauritius
+      - Morocco
+      - Mozambique
+      - Namibia
+      - Niger
+      - Nigeria
+      - Republic of the Congo
+      - Rwanda
+      - Sao Tome and Principe
+      - Senegal
+      - Seychelles
+      - Sierra Leone
+      - Somalia
+      - South Africa
+      - South Sudan
+      - Sudan
+      - Tanzania
+      - Togo
+      - Tunisia
+      - Uganda
+      - Zambia
+      - Zimbabwe
+
+  - continent: Oceania
+    continent-countries:
+      - Australia
+      - Fiji
+      - Kiribati
+      - Marshall Islands
+      - Micronesia
+      - Nauru
+      - New Zealand
+      - Palau
+      - Papua New Guinea
+      - Samoa
+      - Solomon Islands
+      - Tonga
+      - Tuvalu
+      - Vanuatu
+
+### Debug
+debug: false # if changed to true, php error messages will be printed 
+
+### Column mapping - do NOT change if you don't need
+column-mapping-overview:
+  TripType: Type
+  TripNumber: Cron
+  TravelGroup: Travel Group
+  TripID: Ref-ID
+  OverallDestination: Overall Destination
+  DepartureDate: Departure Date
+  ReturnDate: Return Date
+  NumberOfDays: NoO
+  OverallMapPins: Overall Map Pins
+  TripDescription: Trip Description
+  CountryTripMovements: Country Trip Movements
+  PhotoStarttime: Starttime
+  PhotoEndtime: Endtime
+
+column-mapping-events:
+  TripType: Type
+  TripNumber: Cron
+  OverallDestination: Overall Destination
+  HelpText: Help Text
+  Date: Date
+  Events: Events
+  Accommodation: Accommodation
+  AccommodationCountry: Accommodation Country
+  AccommodationCoordinates: Accommodation Coordinates
+  TravelGroup: Travel Group
+  TravelParticipants: Travel Participants
+  AdditionalNotes: Additional Notes
+  CountriesDuringDay: Countries During Day
+
+column-mapping-map:
+  TripType: Type
+  TripNumber: Cron
+  Place: Pin Place
+  Country: Country
+  Coordinates: Coordinates

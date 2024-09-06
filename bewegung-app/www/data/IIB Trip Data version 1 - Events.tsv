@@ -1,0 +1,33 @@
+Type	Cron	Overall Destination	Help Text	Date	Events	Accommodation	Accommodation Country	Accommodation Coordinates	Travel Group	Travel Participants	Additional Notes	Countries During Day	FM
+U	U1	France	V. 23 Måndag	2020-06-01	Flight to France via Frankfurt airport. No time other than the terminal building.	Hotel Burdigala, 115 Rue Georges Bonnac, Bordeaux	France	44.839992, -0.586917	Private	Ludvig		Sweden, **Germany, France	1
+U	U1	France	V. 23 Tisdag	2020-06-02	Visit to wine yard.	Hotel Burdigala, 115 Rue Georges Bonnac, Bordeaux	France	44.839992, -0.586917	Private	Ludvig		France	1
+U	U1	France	V. 23 Onsdag	2020-06-03	Visit to wine yard.	Hotel Burdigala, 115 Rue Georges Bonnac, Bordeaux	France	44.839992, -0.586917	Private	Ludvig		France	1
+U	U1	France	V. 23 Torsdag	2020-06-04	Visit to wine yard.	Hotel Burdigala, 115 Rue Georges Bonnac, Bordeaux	France	44.839992, -0.586917	Private	Ludvig		France	1
+U	U1	France	V. 23 Fredag	2020-06-05	Back to Sweden in the morning.	(Home)	Sweden	-	Private	Ludvig		France, Sweden	1
+U	U2	Italy	V. 27 Måndag	2021-07-05	Flight to Rome. Nice food.	Hotel Savoy	Italy	41.907461, 12.489325	Family	Johan		Sweden, Italy	2
+U	U2	Italy	V. 27 Tisdag	2021-07-06	Went to Colosseum	Hotel Savoy	Italy	41.907461, 12.489325	Family	Johan		Italy	2
+U	U2	Italy	V. 27 Onsdag	2021-07-07	Talked to the pope.	Hotel Savoy	Italy	41.907461, 12.489325	Family	Johan		Italy, Vatican City, Italy	2
+U	U2	Italy	V. 27 Torsdag	2021-07-08	Flight to Stockholm. Stopover eight hours in Vienna, walk around in the city for four hours.	(Home)	Sweden	-	Family	Johan		Italy, *Austria, Sweden	2
+U	U3	Netherlands	V. 9 Lördag	2022-03-05	Flight to Schiphol.	Bunk Hotel, 2 Hagedoornplein, Amsterdam	Netherlands	52.388121, 4.913941	Private	Anna		Sweden, Netherlands	3
+U	U3	Netherlands	V. 9 Söndag	2022-03-06	Went to Maastricht.	Kruisherenhotel Maastricht, Kruisherengang 19, Maastricht	Netherlands	50.848687, 5.683765	Private	Anna		Netherlands	3
+U	U3	Netherlands	V. 10 Måndag	2022-03-07	Back home.	(Home)	Sweden	-	Private	Anna		Netherlands, Sweden	3
+X	X	Comment row							### Not defined ###				4
+I	I1	Kiruna	V. 25 Söndag	2023-06-25	To Kiruna and Jukkasjärvi.	Icehotel,  Marknadsvägen 63, Jukkasjärvi	Sweden	67.850019, 20.596622	Private	Erik	A little bit cold.	Sweden	5
+I	I1	Kiruna	V. 26 Måndag	2023-06-26	Back home.	(Home)	Sweden	-	Private	Erik		Sweden	5
+I	I2	Medelpad	V. 31 Torsdag	2024-08-01	Hiking.	Tent next to lake	Sweden	62.661041, 16.797764	Private	Kasper		Sweden	6
+I	I2	Medelpad	V. 31 Fredag	2024-08-02	Hiking.	Tent next to lake	Sweden	62.661041, 16.797764	Private	Kasper		Sweden	6
+I	I2	Medelpad	V. 31 Lördag	2024-08-03	Hiking.	Tent next to lake	Sweden	62.661041, 16.797764	Private	Kasper		Sweden	6
+I	I2	Medelpad	V. 31 Söndag	2024-08-04	Hiking.	Tent next to lake	Sweden	62.661041, 16.797764	Private	Kasper		Sweden	6
+I	I2	Medelpad	V. 32 Måndag	2024-08-05	Train to Stockholm.	(Home)	Sweden	-	Private	Kasper		Sweden	6
+I	I3	Halland	V. 34 Söndag	2024-08-25	Arrivied late in the evening.	Varbergs Kusthotell, Nils Kreugers väg 5, Varberg	Sweden	57.088600, 12.242687	Sportgroup	Ludvig		Sweden	7
+I	I3	Halland	V. 35 Måndag	2024-08-26	Surfing.	Varbergs Kusthotell, Nils Kreugers väg 5, Varberg	Sweden	57.088600, 12.242687	Sportgroup	Ludvig		Sweden	7
+I	I3	Halland	V. 35 Tisdag	2024-08-27	Surfing.	Varbergs Kusthotell, Nils Kreugers väg 5, Varberg	Sweden	57.088600, 12.242687	Sportgroup	Ludvig		Sweden	7
+I	I3	Halland	V. 35 Onsdag	2024-08-28	Surfing.	Varbergs Kusthotell, Nils Kreugers väg 5, Varberg	Sweden	57.088600, 12.242687	Sportgroup	Ludvig		Sweden	7
+I	I3	Halland	V. 35 Torsdag	2024-08-29	Surfing.	Varbergs Kusthotell, Nils Kreugers väg 5, Varberg	Sweden	57.088600, 12.242687	Sportgroup	Ludvig		Sweden	7
+I	I3	Halland	V. 35 Fredag	2024-08-30	By plane back home.	(Home)	Sweden	-	Sportgroup	Ludvig		Sweden	7
+D	D1	Copenhagen	V. 51 Torsdag	2021-12-23	Arrived by car.	Apartment, Store Kongensgade 59, Copenhagen	Denmark	55.684383, 12.587492	Denmark	Anna		Sweden, Denmark	8
+D	D1	Copenhagen	V. 51 Fredag	2021-12-24	Christmas eve in Hellerup.	Apartment, Store Kongensgade 59, Copenhagen	Denmark	55.684383, 12.587492	Denmark	Anna		Denmark	8
+D	D1	Copenhagen	V. 51 Lördag	2021-12-25	Drove back to Sweden.	(Home)	Denmark	-	Denmark	Anna		Denmark, Sweden	8
+D	D2	Aarhus	V. 51 Fredag	2022-12-23	Arrived by car.	Apartment, Christiansgade 6, Aarhus	Denmark	56.154466, 10.202454	Denmark	Anna		Sweden, Denmark	9
+D	D2	Aarhus	V. 51 Lördag	2022-12-24	Christmas eve in Hellerup.	Apartment, Christiansgade 6, Aarhus	Denmark	56.154466, 10.202454	Denmark	Anna		Denmark	9
+D	D2	Aarhus	V. 51 Söndag	2022-12-25	Drove back to Sweden.	(Home)	Denmark	-	Denmark	Anna		Denmark, Sweden	9

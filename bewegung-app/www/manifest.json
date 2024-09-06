@@ -1,0 +1,19 @@
+{
+  "name": "Immer in Bewegung",
+  "short_name": "IIB",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e3e3e3",
+  "icons": [
+    {
+      "src": "favicon.webp",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "img/frog_g_150.webp",
+      "sizes": "150x150",
+      "type": "image/png"
+    }
+  ]
+}
