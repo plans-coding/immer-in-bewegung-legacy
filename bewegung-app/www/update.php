@@ -1,6 +1,6 @@
 <?php
 
-    $latestV = @file_get_contents('version');
+    $latestV = @file_get_contents('https://raw.githubusercontent.com/plans-coding/immer-in-bewegung/main/bewegung-app/www/version');
     $currentV = @file_get_contents('version');
 
     if ($latestV === false) {
