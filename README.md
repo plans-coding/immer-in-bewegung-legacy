@@ -1,2 +1,2 @@
 # Immer in Bewegung Travel Documentation
-Repository storing files at https://bewegung.app/
+Repository storing files for https://bewegung.app/
