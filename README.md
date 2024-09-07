@@ -5,7 +5,7 @@ Open source travel documentation app for self-hosting.
 See installation instructions at https://bewegung.app/docs/installation
 
 ## Overall information about the application
-https://bewegung.app/
+Read more at https://bewegung.app/
 
 ## Sreenshots
 ![img](iib-overview.png)
