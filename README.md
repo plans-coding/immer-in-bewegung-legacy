@@ -1,2 +1,2 @@
-# immer-in-bewegung
-Open source travel documentation app for self-hosting
+# Immer in Bewegung Travel Documentation
+Repository storing files at https://bewegung.app/
