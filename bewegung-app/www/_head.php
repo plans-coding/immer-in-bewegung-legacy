@@ -121,7 +121,7 @@
             #visitsPerCountry td {padding:0pt;}
             #overviewInfotext {margin:5pt;}
             #tripCatCont{margin:10pt 2pt 0pt 2pt;}
-            #chartFlex {height:200pt;}
+            #chartFlex {height:200pt;width:150pt;}
             .normal {font-size:30pt;margin:0;}
             input::placeholder {font-size: 17pt;}
             #overviewInfotext{display:none;}

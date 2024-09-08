@@ -100,19 +100,22 @@ foreach ( $settings["trip-categories"] as $tripType ) {
 //print_r($accommodation_countries);
 ?>
 
-<div style="display:flex;padding-bottom:20pt;">
-
-	<div style="flex:1;">
-		<div>Count of unique countries <span style="font-family: 'Cairo', sans-serif;font-weight: bold;font-size:3em;"><?php echo sizeof($totalCountries); ?></span></div>
-		<div>Number of trips in total <span style="font-family: 'Cairo', sans-serif;font-weight: bold;font-size:3em;"><?php echo $chartTotalTrips; ?></span></div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; padding: 0;max-width:100%;">
+    <div style="">
+		<div>Count of unique countries</div>
+		<div style="line-height:1em;font-family: 'Cairo', sans-serif;font-weight: bold;font-size:3em;"><?php echo sizeof($totalCountries); ?></div>
 	</div>
-
-	<div style="flex:1;" id="chartFlex">
-		<canvas id="statOverview"></canvas>
+    <div style="text-align:right;">
+		Number of trips in total<br />
+		<span style="line-height:1em;font-family: 'Cairo', sans-serif;font-weight: bold;font-size:3em;"><?php echo $chartTotalTrips; ?></span>
 	</div>
-
 </div>
 
+<div style="width:400pt;margin:auto;max-width:100%;">
+<canvas id="statOverview"></canvas>
+</div>
+
+<br />
 <script>
   const ctx = document.getElementById('statOverview');
 
@@ -132,7 +135,7 @@ foreach ( $settings["trip-categories"] as $tripType ) {
     options: {
 		plugins: {
         legend: {
-          position: 'bottom' // This moves the legend to the bottom
+          position: 'top'
         }
       },
     }

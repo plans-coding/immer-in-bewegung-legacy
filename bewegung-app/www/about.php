@@ -28,7 +28,7 @@
 
 <h1 class="normal" style="margin-bottom:10pt;">About</h1>
 <h1 class="normal" style="margin-top:0;font-size:16pt;"><?php include 'version'; ?></h1>
-<p><span class="immer-in-font-uc">Immer in</span>&nbsp;<span class="bewegung-font-uc">Bewegung</span> is your open source, lightweight, and future proof travel documentation app.</p>
+<p style="line-height:26pt;"><span class="immer-in-font-uc">Immer in</span>&nbsp;<span class="bewegung-font-uc">Bewegung</span> is your open source, lightweight, and future proof travel documentation app.</p>
 <p>Check for updates at <a target="_blank" href="https://bewegung.app/">bewegung.app</a>.</p>
 
 <?php
