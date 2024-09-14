@@ -15,7 +15,7 @@ if (explode("-",$_GET["trip"])[0]=="AA") { $trip_id="AÄ-".explode("-",$_GET["tr
 $date=$_GET["date"];
 
 //:2283
-$immich_href = $settings["immich-settings"][0]["immich-server-address"].'search?query=%7B%22takenAfter%22%3A%22'.
+$immich_href = $settings["immich-settings"]["immich-server-address"].'search?query=%7B%22takenAfter%22%3A%22'.
 substr($_GET["date"],0,4).'-'.
 substr($_GET["date"],4,2).'-'.
 substr($_GET["date"],6,2).

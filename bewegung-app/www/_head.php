@@ -32,18 +32,6 @@
         .inputDataContainer {background-color:grey;padding:2pt;margin:auto;display:inline-block;margin-top:20pt;}
         .inputDescription {background-color:#fff2cc;margin-right:2pt;text-align:left;line-height:2rem;padding-left:5pt;padding-right:5pt;text-align:center;}
         .inputData {display:flex;flex-direction:row;}
-        .inputDataTextarea {
-            
-            font-family: 'Segoe UI';font-size:14pt;height:217pt;width:200pt;border:0;
-            
-            background-image: linear-gradient(#F1F1F1 50%, #F9F9F9 50%);
-            background-size: 100% 4rem;
-            background-attachment: local;
-            line-height: 2rem;
-            margin: 0 auto;
-            padding: 0pt 4pt;
-            
-        }
         textarea:focus {outline: none;}
         .inputDataSyntaxCheck {line-height: 2rem;background-color:grey;font-size:14pt;width:25pt;}
 
@@ -110,10 +98,10 @@
         /* ##### ANNAN CSS FÖR MINDRE SKÄRM ##### */
         @media (max-width: 1440px) {
             .trip_image_button {font-size:1.2em;}
-            .trip_table {overflow:hidden;} /* word-break:break-all; */
+            .trip_table {overflow:hidden;word-break:break-all;} /* word-break:break-all; */
             .trip_table tr {display: grid;grid-template-columns: repeat(5, 1fr);}
             .trip_table_division {grid-column: 1 / span 5;}
-            .trip_table_country_category {hyphens:auto;line-height:10pt;font-size:0.7em;} /* word-break:break-all; */
+            .trip_table_country_category {hyphens:auto;line-height:10pt;font-size:0.7em;word-break:break-all;} /* word-break:break-all; */
             #iib-foot, #menuItem_Sync, #menuItem_About, #prevDayText, #nextDayText, #backText, #openinText, #openinLogo, #tripOverview {display:none;}
             #aboutTop, #openinLogoSmall {display:inline-block;}
             .topBar, .menuBar{font-size:14pt;}

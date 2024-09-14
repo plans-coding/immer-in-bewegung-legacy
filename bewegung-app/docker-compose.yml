@@ -9,6 +9,9 @@ services:
       - ./webserver.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
+    networks:
+      - immich_default # Add to same network as Immich
+
   php:
     #image: php:8.2-fpm
     build:
@@ -18,3 +21,9 @@ services:
     volumes:
       - ./www:/www
       - ./iib-settings.yml:/www/data/iib-settings.yml
+    networks:
+      - immich_default # Add to same network as Immich
+
+networks:
+  immich_default:
+    external: true

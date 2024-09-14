@@ -21,15 +21,15 @@ $settings = yaml_parse_file($settingsPath);
 
 // ### SETTINGS FILE PATH REFERENCES
 
-$overview_file_path = $dataPath.$settings["trip-data"][0]["spreadsheet-name"]." - ".$settings["trip-data"][0]["overview-name"].".tsv";
-$events_file_path = $dataPath.$settings["trip-data"][0]["spreadsheet-name"]." - ".$settings["trip-data"][0]["events-name"].".tsv";
-$map_file_path = $dataPath.$settings["trip-data"][0]["spreadsheet-name"]." - ".$settings["trip-data"][0]["map-name"].".tsv";
+$overview_file_path = $dataPath.$settings["trip-data"]["spreadsheet-name"]." - ".$settings["trip-data"]["overview-name"].".tsv";
+$events_file_path = $dataPath.$settings["trip-data"]["spreadsheet-name"]." - ".$settings["trip-data"]["events-name"].".tsv";
+$map_file_path = $dataPath.$settings["trip-data"]["spreadsheet-name"]." - ".$settings["trip-data"]["map-name"].".tsv";
 
 // #### CONFIG ERROR CHECK
 $keys = ["spreadsheet-id", "overview-gid", "events-gid", "map-gid"];
 
 foreach ($keys as $key) {
-    if ($settings["trip-data"][0][$key] == "") {
+    if ($settings["trip-data"][$key] == "") {
         echo '<div style="margin-top:20pt;background-color: #ffcccc;padding:10pt;"><b>' . htmlspecialchars($key) . '</b> not defined in iib-settings.yml</div>';
         exit();
     }
@@ -39,18 +39,18 @@ $stopExecution = false;
 
 if (!file_exists($overview_file_path)) {
     echo '<div style="margin-top:20pt;background-color: #ffcccc;padding:10pt;">The following file is missing:<br /><b>'.$overview_file_path.'</b>';
-    echo '&nbsp;&nbsp;<a style="color:red;" href="https://docs.google.com/spreadsheets/d/'.$settings["trip-data"][0]["spreadsheet-id"].'/export?format=tsv&gid='.$settings["trip-data"][0]["overview-gid"].'">This file? (Right-click and save to data folder)</a></div>';
+    echo '&nbsp;&nbsp;<a style="color:red;" href="https://docs.google.com/spreadsheets/d/'.$settings["trip-data"]["spreadsheet-id"].'/export?format=tsv&gid='.$settings["trip-data"]["overview-gid"].'">This file? (Right-click and save to data folder)</a></div>';
     $stopExecution = true;
 }
 
 if (!file_exists($events_file_path)) {
     echo '<div style="margin-top:20pt;background-color: #ffcccc;padding:10pt;">The following file is missing:<br /><b>'.$events_file_path.'</b>';
-    echo '&nbsp;&nbsp;<a style="color:red;" href="https://docs.google.com/spreadsheets/d/'.$settings["trip-data"][0]["spreadsheet-id"].'/export?format=tsv&gid='.$settings["trip-data"][0]["events-gid"].'">This file? (Right-click and save to data folder)</a></div>';
+    echo '&nbsp;&nbsp;<a style="color:red;" href="https://docs.google.com/spreadsheets/d/'.$settings["trip-data"]["spreadsheet-id"].'/export?format=tsv&gid='.$settings["trip-data"]["events-gid"].'">This file? (Right-click and save to data folder)</a></div>';
     $stopExecution = true;
 }
 if (!file_exists($map_file_path)) {
     echo '<div style="margin-top:20pt;background-color: #ffcccc;padding:10pt;">The following file is missing:<br /><b>'.$map_file_path.'</b>';
-    echo '&nbsp;&nbsp;<a style="color:red;" href="https://docs.google.com/spreadsheets/d/'.$settings["trip-data"][0]["spreadsheet-id"].'/export?format=tsv&gid='.$settings["trip-data"][0]["map-gid"].'">This file? (Right-click and save to data folder)</a></div>';
+    echo '&nbsp;&nbsp;<a style="color:red;" href="https://docs.google.com/spreadsheets/d/'.$settings["trip-data"]["spreadsheet-id"].'/export?format=tsv&gid='.$settings["trip-data"]["map-gid"].'">This file? (Right-click and save to data folder)</a></div>';
     $stopExecution = true;
 }
 

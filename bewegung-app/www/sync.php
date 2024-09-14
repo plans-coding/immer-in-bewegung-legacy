@@ -10,17 +10,17 @@
 
 <div style="background-color:#e3e3e3;padding:10pt;font-family: 'Francois+One', sans-serif;">
 Your Google Spreadsheet ID according to your configuration<br />
-<b><a target="_blank" href="https://docs.google.com/spreadsheets/d/<?php echo $settings["trip-data"][0]["spreadsheet-id"]; ?>/edit"><?php echo $settings["trip-data"][0]["spreadsheet-id"]; ?></a></b><br /><br />
+<b><a target="_blank" href="https://docs.google.com/spreadsheets/d/<?php echo $settings["trip-data"]["spreadsheet-id"]; ?>/edit"><?php echo $settings["trip-data"]["spreadsheet-id"]; ?></a></b><br /><br />
 Update your files manually by <b>right click</b> on the links below and save the file to your IIB <b>data</b> folder.
 <br />
-<a class="iib-action-button" href="https://docs.google.com/spreadsheets/d/<?php echo $settings["trip-data"][0]["spreadsheet-id"]; ?>
-/export?format=tsv&gid=<?php echo $settings["trip-data"][0]["overview-gid"]; ?>">Overview (tsv format)</a>
+<a class="iib-action-button" href="https://docs.google.com/spreadsheets/d/<?php echo $settings["trip-data"]["spreadsheet-id"]; ?>
+/export?format=tsv&gid=<?php echo $settings["trip-data"]["overview-gid"]; ?>">Overview (tsv format)</a>
  
-<a class="iib-action-button" href="https://docs.google.com/spreadsheets/d/<?php echo $settings["trip-data"][0]["spreadsheet-id"]; ?>
-/export?format=tsv&gid=<?php echo $settings["trip-data"][0]["events-gid"]; ?>">Events (tsv format)</a>
+<a class="iib-action-button" href="https://docs.google.com/spreadsheets/d/<?php echo $settings["trip-data"]["spreadsheet-id"]; ?>
+/export?format=tsv&gid=<?php echo $settings["trip-data"]["events-gid"]; ?>">Events (tsv format)</a>
  
-<a class="iib-action-button" href="https://docs.google.com/spreadsheets/d/<?php echo $settings["trip-data"][0]["spreadsheet-id"]; ?>
-/export?format=tsv&gid=<?php echo $settings["trip-data"][0]["map-gid"]; ?>">Map (tsv format)</a>
+<a class="iib-action-button" href="https://docs.google.com/spreadsheets/d/<?php echo $settings["trip-data"]["spreadsheet-id"]; ?>
+/export?format=tsv&gid=<?php echo $settings["trip-data"]["map-gid"]; ?>">Map (tsv format)</a>
 </div>
 
 <h2>Other options</h2>
@@ -31,9 +31,9 @@ An automatically integration it not in place at the moment, but you can achive i
 <div style="margin-top:15pt;background-color:#e3e3e3;padding:1pt;font-family: 'Francois+One', sans-serif;">
 
 <ul>
-    <li><u><?php echo $settings["trip-data"][0]["spreadsheet-name"]." - ".$settings["trip-data"][0]["overview-name"]; ?>.tsv</u></li>
-    <li><u><?php echo $settings["trip-data"][0]["spreadsheet-name"]." - ".$settings["trip-data"][0]["events-name"]; ?>.tsv</u></li>
-    <li><u><?php echo $settings["trip-data"][0]["spreadsheet-name"]." - ".$settings["trip-data"][0]["map-name"]; ?>.tsv</u></li>
+    <li><u><?php echo $settings["trip-data"]["spreadsheet-name"]." - ".$settings["trip-data"]["overview-name"]; ?>.tsv</u></li>
+    <li><u><?php echo $settings["trip-data"]["spreadsheet-name"]." - ".$settings["trip-data"]["events-name"]; ?>.tsv</u></li>
+    <li><u><?php echo $settings["trip-data"]["spreadsheet-name"]." - ".$settings["trip-data"]["map-name"]; ?>.tsv</u></li>
 </ul>
 </div>
 

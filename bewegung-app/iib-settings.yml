@@ -1,18 +1,25 @@
 ### Add your data source
 trip-data:
-  - provider: google-sheet
-    spreadsheet-id: 1dr8Za7_CvArUK7ZG4Cx6Kv5fXwEtX_i6rmEBFryE5jc  #set null if google sheet is not used
-    spreadsheet-name: IIB Trip Data version 1
-    overview-name: Overview
-    overview-gid: 0 #set null if google sheet is not used
-    events-name: Events
-    events-gid: 230002739 #set null if google sheet is not used
-    map-name: Map
-    map-gid: 19867792 #set null if google sheet is not used
+  provider: google-sheet
+  spreadsheet-id: 1dr8Za7_CvArUK7ZG4Cx6Kv5fXwEtX_i6rmEBFryE5jc  #set null if google sheet is not used
+  spreadsheet-name: IIB Trip Data version 1
+  overview-name: Overview
+  overview-gid: 0 #set null if google sheet is not used
+  events-name: Events
+  events-gid: 230002739 #set null if google sheet is not used
+  map-name: Map
+  map-gid: 19867792 #set null if google sheet is not used
 
 ### Change Immich settings
 immich-settings:
-  - immich-server-address: http://localhost:2283/ # Remember last dash /
+  immich-server-address: http://localhost:2283/ # Front-end address - Remember last dash /
+
+  # If you are using Docker, this address should probably NOT be changed (http://immich_server:3001/api/)
+  # If you deploy file to web server directly then it is probably http://127.0.0.1:2283/api/
+  immich-server-api-address: http://immich_server:3001/api/ # Back-end address - Remember last dash /
+
+   # Generate and paste an api key in Immich under http://localhost:2283/user-settings?isOpen=api-keys
+  immich-server-api-key: OqMvcxTWJ2VJpSRBbTxjAFFYN0KXJMSQLZbUBMY2a8
 
 ### Define trip categories
 trip-categories:
