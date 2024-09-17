@@ -21,8 +21,8 @@ switch ($_GET["type"]) {
 	if ($_GET["id"]=="") { echo 'Ingen resa angiven.'; }
 	break;
 	
-	case 'immich':
-	require("kml/kml_trip_immich.php");
+	case 'assets':
+	require("kml/kml_trip_assets.php");
 	if ($_GET["id"]=="") { echo 'Ingen resa angiven.'; }
 	break;
 	

@@ -60,6 +60,7 @@ foreach ($data as $photo) {
 
     // Collect coordinates for the LineString
     $lineCoordinates[] = [(float)$photo["lon"], (float)$photo["lat"]];
+
 }
 
 // Add LineString feature if coordinates are available
