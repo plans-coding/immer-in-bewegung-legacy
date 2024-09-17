@@ -11,3 +11,8 @@ Read more at https://bewegung.app/
 ![img](iib-overview.png)
 
 ![img](iib-events.png)
+
+## Licenses
+* Immer in Bewegung: AGPL-3.0 license
+* Leaflet: BSD-2-Clause license
+* Chartjs: MIT license
