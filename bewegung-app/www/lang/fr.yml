@@ -1,0 +1,107 @@
+menu:
+  overview: Vue d'ensemble
+  map: Carte
+  statistics: Statistiques
+  sync: Synchronisation
+  about: À propos
+
+search:
+  search-placeholder: Que recherchez-vous ?
+  search-type-exact-word: Mot exact
+  search-type-all: Tous
+  search-clear: Effacer
+  search-button: Rechercher
+  trips: Voyages
+  day-notes: Notes quotidiennes
+  no-match: Aucun résultat trouvé
+
+overview:
+  title: Vue d'ensemble
+  heading: Aperçu du voyage
+  paragraph: Cliquez sur un voyage pour voir les détails. Vous pouvez choisir entre une <a href="#year-devision">division par année</a> ou une <a href="#country-devision">division par pays</a>.
+  division-year: "Division : Année"
+  division-country: "Division : Pays"
+  century: "'s"
+  country: Pays
+
+trip:
+  all-trips: Tous les voyages
+  to: à
+  summary: Résumé
+  overview: Aperçu
+  accommodations: Hébergements
+  assets: Ressources
+  departure-date: Date de départ
+  return-date: Date de retour
+  day-count: Nombre de jours
+  id: ID
+  country-count: Nombre de pays
+  country-trip-movements: Mouvements de voyage et de pays
+  very-short: Très courte visite de caractère essentiel
+  shorter: Visite plus courte de caractère essentiel
+  restore: Restaurer, compte uniquement si * et ** comptent
+  overall-route: Itinéraire général
+  day-per-day: Jour par jour
+  show-photos: Montrer les photos
+  monday: Lundi
+  tuesday: Mardi
+  wednesday: Mercredi
+  thursday: Jeudi
+  friday: Vendredi
+  saturday: Samedi
+  sunday: Dimanche
+
+images:
+  title: Photos de voyage
+  back: Retour à
+  open-in: Ouvrir dans
+  previous-day: Jour précédent
+  next-day: Jour suivant
+
+map:
+  title: Carte
+  overall-route: Mouvements généraux pour tous les voyages
+  all-accommodations: Tous les hébergements dans tous les pays (TRÈS LENT)
+  accommodations: Hébergements
+
+map-pin:
+  accommodation-night: Hébergement, nuit
+  accommodation: Hébergement
+  date: Date
+  trip: Voyage
+  coordinates: Coordonnées
+
+statistics:
+  title: Statistiques
+  unique-countries: Nombre de pays uniques
+  total-trips: Nombre total de voyages
+  visit-country-count: Nombre de visites par pays
+  1-qualified: Une visite qualifiée par voyage
+  many-qualified: Plusieurs visites qualifiées par voyage
+  border-crossings: Passages de frontières (entrée et sortie)
+  country: Pays
+  ordinary-length: Durée ordinaire
+  shorter-stop: Incl. arrêts plus courts
+  short-very-short: Incl. arrêts plus courts et très courts
+  minimal-number: Nombre minimal
+  note: Toutes les colonnes montrent des visites de caractère essentiel. Le nombre réel de passages de frontières peut donc être plus élevé que rapporté. Un séjour de caractère essentiel est un arrêt important pour l'expérience du voyage. Une visite qualifiée est une visite qui ne reprend pas une visite précédente après une interruption due à un court ou très court séjour dans un autre pays.
+  overnight-stays-country: Nombre de nuitées par pays
+  top-ten-countries: Top dix
+  country: Pays
+  overnight-stays: Nombre de nuitées
+
+sync:
+  title: Synchronisation
+  first-pg: Téléchargez vos dernières notes de voyage depuis Google Sheets. Vous devez être connecté dès le début pour effectuer les actions ci-dessous. Aucune information d'authentification ne sera envoyée à l'application.
+  second-pg: Votre identifiant Google Spreadsheet selon votre configuration
+  third-pg: Mettez à jour vos fichiers manuellement en <b>cliquant droit</b> sur les boutons ci-dessous et en enregistrant les fichiers dans le dossier <b>data</b>.
+  other-options: Autres options
+  other-options-text: "Il n'y a actuellement pas d'intégration automatique, mais il est possible de la développer vous-même en utilisant l'API Google Sheet activée dans la console Google Cloud.<br /><br />Si vous utilisez Microsoft 365 ou une installation locale de Microsoft Office, LibreOffice ou similaire, vous pouvez enregistrer des fichiers TSV directement dans le dossier <b>data</b> avec les noms suivants."
+
+about:
+  title: À propos
+  description: est votre application de documentation de voyage open-source. Durable et légère en ressources.
+  update: Vérifiez les mises à jour sur
+
+update:
+  message: Une nouvelle version est disponible

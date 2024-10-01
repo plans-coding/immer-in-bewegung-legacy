@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $appLanguage; ?>">
 
 <head>
     
@@ -95,6 +95,9 @@
 
         #searchResult{height:;}
 
+        .pg_grey {background-color:#e3e3e3;}
+        #update_message{background-color:rgb(255,248,220);}
+
         /* ##### ANNAN CSS FÖR MINDRE SKÄRM ##### */
         @media (max-width: 1440px) {
             .trip_image_button {font-size:1.2em;}
@@ -102,17 +105,17 @@
             .trip_table tr {display: grid;grid-template-columns: repeat(5, 1fr);}
             .trip_table_division {grid-column: 1 / span 5;}
             .trip_table_country_category {hyphens:auto;line-height:10pt;font-size:0.7em;word-break:break-all;} /* word-break:break-all; */
-            #iib-foot, #menuItem_Sync, #menuItem_About, #prevDayText, #nextDayText, #backText, #openinText, #openinLogo, #tripOverview {display:none;}
+            #iib-foot, #lang-menu-syncphp, #lang-menu-aboutphp, #prevDayText, #nextDayText, #backText, #openinText, #openinLogo, #lang-overview-heading {display:none;}
             #aboutTop, #openinLogoSmall {display:inline-block;}
             .topBar, .menuBar{font-size:14pt;}
             #visitsPerCountry {font-size:9pt;margin-top:5pt;}
             #visitsPerCountry td {padding:0pt;}
-            #overviewInfotext {margin:5pt;}
+            #lang-overview-paragraph {margin:5pt;}
             #tripCatCont{margin:10pt 2pt 0pt 2pt;}
             #chartFlex {height:200pt;width:150pt;}
             .normal {font-size:30pt;margin:0;}
             input::placeholder {font-size: 17pt;}
-            #overviewInfotext{display:none;}
+            #lang-overview-paragraph{display:none;}
             #trip_nav {margin-top:2pt;}
             #map {height:250pt !important;}
         }
@@ -120,24 +123,26 @@
 
         /* ##### ANNAN CSS FÖR DARK MODE ##### */
         @media (prefers-color-scheme: dark) {
+            a {color:#07ad67;}
             body, .trip_table, .menulink, thead, .trip_table_details {background-color:#000 !important;}
-            h1, h2,body, .menulink, thead, .trip_table_details, #update > div {color:#fff !important;}
+            h1, h2,body, .menulink, thead, .trip_table_details > div {color:#fff !important;}
             .trip_table_division {background-color:#333333 !important;}
             .trip_table {background-color:#333;}
             input[type="text"], #searchStringPattern, select {background-color:#444 !important;color:#fff;}
             .trip_table_details, menu {background-color:#333 !important;}
             .searchButton, .trip_image_button {background-color:grey;}
+            .pg_grey { background-color:#333;color:#fff; }
             .imagesBar{background-color:#555 !important;}
             .nightNumber{color:#000;}
             .topBar{background-color:#333 !important;}
             .menuItem{background-color:#000 !important;color:#fff !important;}
             .searchDay {background-color:#666;}
-            #updateText {color:#000 !important;}
             #statComment, #statSummary tr:nth-child(even), #nightPerCountry tr:nth-child(even), #visitsPerCountry tr:nth-child(even) {
                 background-color: #333; /* Color for even rows */
             }
             #contentS{background-color:#333 !important;}
             .menuBar {border-bottom:3pt solid #555;background-color:#333 !important;}
+            #update_message {background-color:#07ad67;color:#000;}
         }
         /* ##### ANNAN CSS FÖR DARK MODE ##### */
 
@@ -171,17 +176,16 @@
             <div class="menuBar">
                 <?php
 
-                $refItems["menu"]["Overview"]="index.php";
-                $refItems["menu"]["Map"]="map.php";
-                $refItems["menu"]["Statistics"]="statistics.php";
-                $refItems["menu"]["Sync"]="sync.php";
-                $refItems["menu"]["About"]="about.php";
+                $refItems["menu"][($translation["overview"]["title"] ?? 'Overview')] = "index.php";
+                $refItems["menu"][($translation["map"]["title"] ?? 'Map')] = "map.php";
+                $refItems["menu"][($translation["statistics"]["title"] ?? 'Statistics')] = "statistics.php";
+                $refItems["menu"][($translation["sync"]["title"] ?? 'Sync')] = "sync.php";
+                $refItems["menu"][($translation["about"]["title"] ?? 'About')] = "about.php";
 
                 foreach ($refItems["menu"] as $refItem => $link) {
                     //background-color:#004c97;color:#fff;
                     if ( $link == basename($_SERVER['SCRIPT_NAME']) || ( $link == "index.php" && basename($_SERVER['SCRIPT_NAME']) == "/" ) ) { $selectedItemMenu = ' style="font-weight:bold;"'; } else { $selectedItemMenu = ""; }
-
-                    echo '<a href="'.$link.'" class="menuItem" id="menuItem_'.$refItem.'"'.$selectedItemMenu.'>'.$refItem.'</a>';
+                    echo '<a href="'.$link.'" class="menuItem" id="lang-menu-'.str_replace(".","",strtolower($link)).'" '.$selectedItemMenu.'>'.$refItem.'</a>';
                 }
                 ?>
             </div>

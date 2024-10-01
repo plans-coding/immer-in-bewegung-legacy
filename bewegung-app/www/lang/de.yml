@@ -1,0 +1,107 @@
+menu:
+  overview: Übersicht
+  map: Karte
+  statistics: Statistik
+  sync: Sync
+  about: Über
+
+search:
+  search-placeholder: Wonach suchen Sie?
+  search-type-exact-word: Exaktes Wort
+  search-type-all: Alle
+  search-clear: Löschen
+  search-button: Suchen
+  trips: Reisen
+  day-notes: Tagesnotizen
+  no-match: Keine Suchergebnisse
+
+overview:
+  title: Übersicht
+  heading: Reiseübersicht
+  paragraph: Klicke auf eine Reise, um Details zu sehen. Sie können zwischen der <a href="#year-devision">Jahres-</a> und der <a href="#country-devision">Länderaufteilung</a> wählen.
+  division-year: "Aufteilung: Jahr"
+  division-country: "Aufteilung: Land"
+  century: er-Jahre
+  country: Land
+
+trip:
+  all-trips: Alle Reisen
+  to: bis
+  summary: Zusammenfassung
+  overview: Überblick
+  accommodations: Unterkünfte
+  assets: Materialien
+  departure-date: Abreisedatum
+  return-date: Rückreisedatum
+  day-count: Anzahl der Tage
+  id: ID
+  country-count: Anzahl der Länder
+  country-trip-movements: Länder- und Reisebewegungen
+  very-short: Sehr kurzer Besuch von wesentlicher Bedeutung
+  shorter: Kürzerer Besuch von wesentlicher Bedeutung
+  restore: Wiederherstellen, zählt nur, wenn * und ** zählen
+  overall-route: Gesamtroute
+  day-per-day: Tag für Tag
+  show-photos: Fotos anzeigen
+  monday: Montag
+  tuesday: Dienstag
+  wednesday: Mittwoch
+  thursday: Donnerstag
+  friday: Freitag
+  saturday: Samstag
+  sunday: Sonntag
+
+images:
+  title: Reisefotos
+  back: Zurück zu
+  open-in: Öffnen in
+  previous-day: Vorheriger Tag
+  next-day: Nächster Tag
+
+map:
+  title: Karte
+  overall-route: Gesamte Bewegungen aller Reisen
+  all-accommodations: Alle Unterkünfte in allen Ländern (SEHR LANGSAM)
+  accommodations: Unterkünfte
+
+map-pin:
+  accommodation-night: Unterkunft, Nacht
+  accommodation: Unterkunft
+  date: Datum
+  trip: Reise
+  coordinates: Koordinaten
+
+statistics:
+  title: Statistik
+  unique-countries: Anzahl der einzigartigen Länder
+  total-trips: Gesamtanzahl der Reisen
+  visit-country-count: Anzahl der Besuche pro Land
+  1-qualified: Ein qualifizierter Besuch pro Reise
+  many-qualified: Mehrere qualifizierte Besuche pro Reise
+  border-crossings: Grenzübertritte (Ein- und Ausreise)
+  country: Land
+  ordinary-length: Normale Länge
+  shorter-stop: Einschließlich kürzerer Stopps
+  short-very-short: Einschließlich kürzerer und sehr kurzer Stopps
+  minimal-number: Minimale Anzahl
+  note: Alle Spalten zeigen Besuche von wesentlicher Bedeutung. Die tatsächliche Anzahl der Grenzübertritte kann daher größer sein als angegeben. Besuche von wesentlicher Bedeutung sind Aufenthalte, die wichtig für das Reiseerlebnis sind. Ein qualifizierter Besuch ist ein Besuch, der nicht einen vorherigen Besuch wieder aufnimmt, nachdem er durch einen kurzen oder sehr kurzen Aufenthalt in einem anderen Land unterbrochen wurde.
+  overnight-stays-country: Anzahl der Übernachtungen pro Land
+  top-ten-countries: Top zehn
+  country: Land
+  overnight-stays: Anzahl der Übernachtungen
+
+sync:
+  title: Sync
+  first-pg: Lade deine neuesten Reisetagebucheinträge aus Google Sheet herunter. Du musst von Anfang an eingeloggt sein, um die untenstehenden Aktionen durchzuführen. Keine Authentifizierungsinformationen werden an die App gesendet.
+  second-pg: Deine Google Spreadsheet-ID laut deiner Konfiguration
+  third-pg: Aktualisiere deine Dateien manuell, indem du mit <b>Rechtsklick</b> auf die Schaltflächen unten klickst und die Dateien in den Ordner <b>data</b> speicherst.
+  other-options: Weitere Optionen
+  other-options-text: Derzeit gibt es keine automatische Integration, aber es ist möglich, sie mit Hilfe der Google Sheet API, die in der Google Cloud Console aktiviert wird, selbst zu erstellen.<br /><br />Wenn du Microsoft 365 oder eine lokale Installation von Microsoft Office, LibreOffice oder Ähnlichem verwendest, kannst du TSV-Dateien direkt in den Ordner <b>data</b> mit den folgenden Namen speichern.
+
+about:
+  title: Über
+  description: ist deine Open-Source-Reisedokumentations-App. Zukunftssicher und ressourcenschonend.
+  update: Überprüfe auf Updates bei
+
+update:
+  message: Eine neue Version ist verfügbar

@@ -1,0 +1,107 @@
+menu:
+  overview: Overzicht
+  map: Kaart
+  statistics: Statistieken
+  sync: Synchronisatie
+  about: Over
+
+search:
+  search-placeholder: Waar bent u naar op zoek?
+  search-type-exact-word: Exact woord
+  search-type-all: Alle
+  search-clear: Wissen
+  search-button: Zoeken
+  trips: Reizen
+  day-notes: Dagnotities
+  no-match: Geen zoekresultaten
+
+overview:
+  title: Overzicht
+  heading: Reisoverzicht
+  paragraph: Klik op een reis om details te zien. U kunt kiezen tussen een <a href="#year-devision">jaarverdeling</a> of een <a href="#country-devision">landverdeling</a>.
+  division-year: "Verdeling: Jaar"
+  division-country: "Verdeling: Land"
+  century: "'s"
+  country: Land
+
+trip:
+  all-trips: Alle reizen
+  to: naar
+  summary: Samenvatting
+  overview: Overzicht
+  accommodations: Accommodaties
+  assets: Materialen
+  departure-date: Vertrekdatum
+  return-date: Retourdatum
+  day-count: Aantal dagen
+  id: ID
+  country-count: Aantal landen
+  country-trip-movements: Land- en reismoties
+  very-short: Zeer kort bezoek van wezenlijk belang
+  shorter: Korter bezoek van wezenlijk belang
+  restore: Herstellen, telt alleen als * en ** meetellen
+  overall-route: Algemene route
+  day-per-day: Dag per dag
+  show-photos: Foto's tonen
+  monday: Maandag
+  tuesday: Dinsdag
+  wednesday: Woensdag
+  thursday: Donderdag
+  friday: Vrijdag
+  saturday: Zaterdag
+  sunday: Zondag
+
+images:
+  title: Reisfoto's
+  back: Terug naar
+  open-in: Openen in
+  previous-day: Vorige dag
+  next-day: Volgende dag
+
+map:
+  title: Kaart
+  overall-route: Algemene bewegingen van alle reizen
+  all-accommodations: Alle accommodaties in alle landen (ZEER TRAAG)
+  accommodations: Accommodaties
+
+map-pin:
+  accommodation-night: Accommodatie, nacht
+  accommodation: Accommodatie
+  date: Datum
+  trip: Reis
+  coordinates: Coördinaten
+
+statistics:
+  title: Statistieken
+  unique-countries: Aantal unieke landen
+  total-trips: Totaal aantal reizen
+  visit-country-count: Aantal bezoeken per land
+  1-qualified: Eén gekwalificeerd bezoek per reis
+  many-qualified: Meerdere gekwalificeerde bezoeken per reis
+  border-crossings: Grensovergangen (in- en uitreizen)
+  country: Land
+  ordinary-length: Gewone duur
+  shorter-stop: Incl. kortere stops
+  short-very-short: Incl. korte en zeer korte stops
+  minimal-number: Minimumaantal
+  note: Alle kolommen tonen bezoeken van wezenlijk belang. Het werkelijke aantal grensovergangen kan dus groter zijn dan vermeld. Een wezenlijk bezoek is een stop die belangrijk is voor de reiservaring. Een gekwalificeerd bezoek is een bezoek dat niet een eerder bezoek hervat na een onderbreking door een korte of zeer korte stop in een ander land.
+  overnight-stays-country: Aantal overnachtingen per land
+  top-ten-countries: Top tien
+  country: Land
+  overnight-stays: Aantal overnachtingen
+
+sync:
+  title: Synchronisatie
+  first-pg: Download uw laatste reisnotities van Google Sheet. U moet vanaf het begin ingelogd zijn om de onderstaande acties uit te voeren. Geen authenticatie-informatie wordt naar de app verzonden.
+  second-pg: Uw Google Spreadsheet ID volgens uw configuratie
+  third-pg: Werk uw bestanden handmatig bij door met de <b>rechtermuisknop</b> op de onderstaande knoppen te klikken en de bestanden op te slaan in de map <b>data</b>.
+  other-options: Andere opties
+  other-options-text: Er is momenteel geen automatische integratie, maar het is mogelijk om deze zelf te bouwen met behulp van de Google Sheet API, geactiveerd in de Google Cloud-console.<br /><br />Als u Microsoft 365 of een lokale installatie van Microsoft Office, LibreOffice of een vergelijkbare toepassing gebruikt, kunt u TSV-bestanden rechtstreeks opslaan in de map <b>data</b> met de volgende namen.
+
+about:
+  title: Over
+  description: is uw open-source reisdocumentatie-app. Toekomstbestendig en hulpbronnenbesparend.
+  update: Controleer op updates bij
+
+update:
+  message: Een nieuwe versie is beschikbaar

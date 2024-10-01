@@ -1,0 +1,107 @@
+menu:
+  overview: Oversigt
+  map: Kort
+  statistics: Statistik
+  sync: Synk
+  about: Om
+
+search:
+  search-placeholder: Hvad søger du?
+  search-type-exact-word: Eksakt ord
+  search-type-all: Alle
+  search-clear: Ryd
+  search-button: Søg
+  trips: Rejser
+  day-notes: Dagsnotater
+  no-match: Ingen søgeresultater
+
+overview:
+  title: Oversigt
+  heading: Rejseoversigt
+  paragraph: Klik på en rejse for at se detaljer. Du kan vælge mellem <a href="#year-devision">års-</a> og <a href="#country-devision">landsopdeling</a>.
+  division-year: "Opdeling: År"
+  division-country: "Opdeling: Land"
+  century: "'erne"
+  country: Land
+
+trip:
+  all-trips: Alle rejser
+  to: til
+  summary: Sammendrag
+  overview: Oversigt
+  accommodations: Indkvarteringer
+  assets: Materiale
+  departure-date: Afgang
+  return-date: Hjemkomst
+  day-count: Antal dage
+  id: ID
+  country-count: Antal lande
+  country-trip-movements: Land- og rejsebevægelser
+  very-short: Meget kort besøg af væsentlig karakter
+  shorter: Kortere besøg af væsentlig karakter
+  restore: Gendan, tælles kun hvis * og ** tælles
+  overall-route: Overordnet rejsevej
+  day-per-day: Dag for dag
+  show-photos: Vis billeder
+  monday: Mandag
+  tuesday: Tirsdag
+  wednesday: Onsdag
+  thursday: Torsdag
+  friday: Fredag
+  saturday: Lørdag
+  sunday: Søndag
+
+images:
+  title: Rejsebilleder
+  back: Tilbage til
+  open-in: Åbn i
+  previous-day: Forrige dag
+  next-day: Næste dag
+
+map:
+  title: Kort
+  overall-route: Overordnede bevægelser for alle rejser
+  all-accommodations: Alle indkvarteringer i alle lande (MEGET LANGSOM)
+  accommodations: Indkvarteringer
+
+map-pin:
+  accommodation-night: Indkvartering, nat
+  accommodation: Indkvartering
+  date: Dato
+  trip: Rejse
+  coordinates: Koordinater
+
+statistics:
+  title: Statistik
+  unique-countries: Antal unikke lande
+  total-trips: Antal rejser totalt
+  visit-country-count: Antal besøg pr. land
+  1-qualified: Et kvalificeret besøg pr. rejse
+  many-qualified: Flere kvalificerede besøg pr. rejse
+  border-crossings: Grænseovergange (ind- og udrejse)
+  country: Land
+  ordinary-length: Almindelig længde
+  shorter-stop: Inkl. kortere stop
+  short-very-short: Inkl. kortere og meget korte stop
+  minimal-number: Mindste antal
+  note: Alle kolonner viser besøg af væsentlig betydning. Det faktiske antal grænseovergange kan derfor være større end vist. Besøg af væsentlig betydning er ophold, der er vigtige for rejsens oplevelse. Et kvalificeret besøg er et besøg, der ikke genoptager et tidligere besøg efter en afbrydelse af et kort eller meget kort besøg i et andet land.
+  overnight-stays-country: Antal overnatninger pr. land
+  top-ten-countries: Top ti
+  country: Land
+  overnight-stays: Antal overnatninger
+
+sync:
+  title: Synk
+  first-pg: Download dine seneste rejsenotater fra Google Sheet. Du skal være logget ind fra starten for at udføre nedenstående handlinger. Ingen autentifikationsinformation vil blive sendt til appen.
+  second-pg: Dit Google Spreadsheet ID i henhold til din konfiguration
+  third-pg: Opdater dine filer manuelt ved at <b>højreklikke</b> på knapperne nedenfor og gemme filerne i mappen <b>data</b>.
+  other-options: Andre muligheder
+  other-options-text: Der er i øjeblikket ingen automatisk integration, men det er muligt at bygge det selv vha. Google Sheet API, som aktiveres i Google Cloud Console.<br /><br />Hvis du bruger Microsoft 365 eller en lokal installation af Microsoft Office, LibreOffice eller lignende, kan du gemme tsv-filer direkte i mappen <b>data</b> med følgende navne
+
+about:
+  title: Om
+  description: er din rejsedokumentationsapp. Open source, lightweight og fremtidssikker.
+  update: Tjek opdateringer på
+
+update:
+  message: En ny version er tilgængelig

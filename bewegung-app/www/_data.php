@@ -220,4 +220,13 @@ foreach ($allTripMapsPre as $key => $value) {
 
 //print_r($allTripMaps);
 
+// ### LANGUGAGE FILE
+
+if ( file_exists("lang/".$settings["app-language"].".yml") ) {
+    $translation = yaml_parse_file("lang/".$settings["app-language"].".yml");
+    $appLanguage = $settings["app-language"];
+} else {
+    $appLanguage = "en";
+}
+
 ?>

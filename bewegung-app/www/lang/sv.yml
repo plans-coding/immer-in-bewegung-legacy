@@ -1,0 +1,107 @@
+menu:
+  overview: Översikt
+  map: Karta
+  statistics: Statistik
+  sync: Synk
+  about: Om
+
+search:
+  search-placeholder: Vad söker du?
+  search-type-exact-word: Exakt ord
+  search-type-all: Alla
+  search-clear: Rensa
+  search-button: Sök
+  trips: Resor
+  day-notes: Dagsnoteringar
+  no-match: Inget sökresultat
+
+overview:
+  title: Översikt
+  heading: Reseöverblick
+  paragraph: Klicka på en resa för att se detaljer. Du kan välja mellan <a href="#year-devision">års-</a> och <a href="#country-devision">landsindelning</a>.
+  division-year: "Indelning: År"
+  division-country: "Indelning: Land"
+  century: -talet
+  country: Land
+
+trip:
+  all-trips: Alla resor
+  to: till
+  summary: Summering
+  overview: Överblick
+  accommodations: Boenden
+  assets: Material
+  departure-date: Utresa
+  return-date: Inresa
+  day-count: Antal dagar
+  id: ID
+  country-count: Antal länder
+  country-trip-movements: Land- och reserörelser
+  very-short: Väldigt kort besök av väsentlig karaktär
+  shorter: Kortare besök av väsentlig karaktär
+  restore: Återställare, räknas bara om * och ** räknas
+  overall-route: Övergripande resväg
+  day-per-day: Dag för dag
+  show-photos: Visa bilder
+  monday: Måndag
+  tuesday: Tisdag
+  wednesday: Onsdag
+  thursday: Torsdag
+  friday: Fredag
+  saturday: Lördag
+  sunday: Söndag
+
+images:
+  title: Resebilder
+  back: Tillbaka till
+  open-in: Öppna i
+  previous-day: Föregående dag
+  next-day: Nästa dag
+
+map:
+  title: Karta
+  overall-route: Övergripande rörelser för alla resor
+  all-accommodations: Alla boenden i alla länder (MKT LÅNGSAM)
+  accommodations: Boenden
+
+map-pin:
+  accommodation-night: Boende, natt
+  accommodation: Boende
+  date: Datum
+  trip: Resa
+  coordinates: Koordinater
+
+statistics:
+  title: Statistik
+  unique-countries: Antal unika länder
+  total-trips: Antal resor totalt
+  visit-country-count: Antal besök per land
+  1-qualified: Ett kvalificerat besök per resa
+  many-qualified: Flera kvalificerade besök per resa
+  border-crossings: Gränspassager (in- och utresa)
+  country: Land
+  ordinary-length: Ordinarie längd
+  shorter-stop: Inkl. kortare stopp
+  short-very-short: Inkl. kortare och väldigt kort stopp
+  minimal-number: Minsta antal
+  note: Alla kolumner visar besök av väsentlig betydelse. Det faktiska antalet gränspassager kan därför vara större än redovisat. Av väsentlig betydelse räknas uppehåll som är viktiga för resans upplevelse. Ett kvalificerat besök är ett besök som inte återupptar ett tidigare besök efter ett avbrott av ett kort eller mycket kort besök i annat land.
+  overnight-stays-country: Antal övernattningar per land
+  top-ten-countries: Topp tio
+  country: Land
+  overnight-stays: Antal övernattningar
+
+sync:
+  title: Synk
+  first-pg: Ladda ner dina senaste resenoteringar från Google Sheet. De behöver vara inloggad från början för att genomföra åtgärderna nedan. Ingen authentisering information kommer att skickas till appen.
+  second-pg: Ditt Google Spreadsheet ID enligt din konfiguration
+  third-pg: Uppdatera dina filer manuellt genom att <b>höger-klicka</b> på knapparna nedan och spara filerna till mappen <b>data</b>.
+  other-options: Andra alternativ
+  other-options-text: Det finns för närvarande ingen automatisk integration, med det är möjligt att bygga på egen hand mha Google Sheet API som aktiveras i Google Cloud console.<br /><br />Om du använder Microsoft 365 eller en lokal installation av Microsoft Office, LibreOffice eller motsvarande, kan du spara tsv-filer direkt till mappen <b>data</b> med följande namn
+
+about:
+  title: Om
+  description: är din resedokumentationsapp med öppen källkod. Framtidssäker och resurssnål.
+  update: Kontrollera uppdateringar på
+
+update:
+  message: En ny version finns tillgänglig

@@ -1,28 +1,29 @@
 <?php
-    $pageTitle = "Overview";
-    $contentMargin = "auto";
-    include '_head.php';
 	include '_data.php';
+    $pageTitle = $translation["overview"]["title"] ?? "Overview";
+	$contentMargin = "auto";
+    include '_head.php';
 ?>
 
-<h1 class="normal" id="tripOverview">Trip Overview</h1>
+
+<h1 class="normal" id="lang-overview-heading"><?php echo $translation["overview"]["heading"] ?? "Trip Overview"; ?></h1>
 
 <div>
 
 	<div id="contentS" style="justify-content:center;flex-wrap:wrap;max-width:100%;background-color:#e3e3e3;padding:5pt;">
 
 		<div style="flex:1;display:flex;position:relative;">
-            <input id="searchString" type="text" placeholder="What are you looking for?" style="flex:1;height:25pt;font-size:20pt;padding:5pt;padding-right:35pt;border:3pt solid grey;width:100%;" />
-            <button style="position: absolute; right: 6pt; top: 50%; transform: translateY(-50%); height: 25pt;cursor:pointer;position:absolute;background-color:grey;padding:2pt 4pt 2pt 4pt;border-radius:10pt;text-align:center;color:#fff;font-family: 'Francois+One', sans-serif;border:0;" onclick="document.getElementById('searchString').value='';search()">Clear</button>
+            <input id="searchString" type="text" placeholder="<?php echo $translation["search"]["search-placeholder"] ?? "What are you looking for?"; ?>" style="flex:1;height:25pt;font-size:20pt;padding:5pt;padding-right:35pt;border:3pt solid grey;width:100%;" />
+            <button style="position: absolute; right: 6pt; top: 50%; transform: translateY(-50%); height: 25pt;cursor:pointer;position:absolute;background-color:grey;padding:2pt 4pt 2pt 4pt;border-radius:10pt;text-align:center;color:#fff;font-family: 'Francois+One', sans-serif;border:0;" onclick="document.getElementById('searchString').value='';search()" id="lang-search-search-clear"><?php echo $translation["search"]["search-clear"] ?? "Clear"; ?></button>
         </div>
 
 		<div style="flex: 1; display: flex; align-items: center; justify-content: center;margin-top:5pt;">
     		<div style="display: flex; align-items: center; justify-content: center;padding: 5pt 10pt 5pt 10pt;">
 				<select id="searchStringPattern" style="width: 80pt; height: 56px; font-size: 20pt; padding: 5pt; border: 3pt solid grey; margin-right: 10pt;">
-					<option value="word" default>Exact word</option>
-					<option value="all">All</option>
+					<option value="word" default id="lang-search-search-type-exact-word"><?php echo $translation["search"]["search-type-exact-word"] ?? "Exact word"; ?></option>
+					<option value="all" id="lang-search-search-type-all"><?php echo $translation["search"]["search-type-all"] ?? "All"; ?></option>
 				</select>
-				<button class="searchButton" style="align-items: center;padding-left:5pt;" onclick="search();"><img src="img/frog_g_72.webp" style="height:20pt;cursor: pointer;" /> <div  style="padding:13px;">Search</div></button>
+				<button class="searchButton" style="align-items: center;padding-left:5pt;" onclick="search();"><img src="img/frog_g_72.webp" style="height:20pt;cursor: pointer;" /> <div  style="padding:13px;" id="lang-search-search-button"><?php echo $translation["search"]["search-button"] ?? "Search"; ?></div></button>
 
     		</div>
 		</div>
@@ -33,7 +34,7 @@
 
 </div>
 
-<p id="overviewInfotext">Click on a trip to see details. You can choose between <a href="#year-devision">year</a> or <a href="#country-devision">country</a> division.</p>
+<p id="lang-overview-paragraph"><?php echo $translation["overview"]["paragraph"] ?? 'Click on a trip to see details. You can choose between <a href="#year-devision">year</a> and <a href="#country-devision">country</a> division.'; ?></p>
 
 <style>
 .trip_table {
@@ -133,7 +134,7 @@ input.addEventListener('keydown', function(event) {
 
 <table class="trip_table" style="width:100%;">
 
-<tr><td class="trip_table_division" colspan="10" style="background-color:#000000;color:#ffffff;text-align:center;"><a name="year-devision"></a>Division: Year</td></tr>
+<tr><td class="trip_table_division" colspan="10" style="background-color:#000000;color:#ffffff;text-align:center;" id="lang-overview-division-year"><a name="year-devision"></a><?php echo $translation["overview"]["division-year"] ?? "Division: Year"; ?></td></tr>
 
 <?php
 
@@ -153,7 +154,7 @@ $years=array_chunk($years, 10);
 
 foreach ($years as $decade) {
 	if (substr($decade[0],2,2)!="") { $decade_title=substr($decade[0],2,2); } else { $decade_title=substr($min_year,2,1)."0"; }
-	echo '<tr><td class="trip_table_division" colspan="10" style="text-align:center;font-weight:bold;border:0.2em solid #000000;">'.$decade_title.'s</td></tr>';
+	echo '<tr><td class="trip_table_division" colspan="10" style="text-align:center;font-weight:bold;border:0.2em solid #000000;">'.$decade_title.'<span id="lang-overview-century">'.($translation["overview"]["century"] ?? "s").'</span></td></tr>';
 	echo '<tr style="vertical-align:top;">';
 	foreach ($decade as $year) {
 		echo '<td style="text-align:center;">'.$year;
@@ -203,7 +204,7 @@ foreach ($years as $decade) {
 
 
 
-<tr><td class="trip_table_division" colspan="10" style="background-color:#000000;color:#ffffff;text-align:center;"><a name="country-devision"></a>Division: Country</td></tr>
+<tr><td class="trip_table_division" colspan="10" style="background-color:#000000;color:#ffffff;text-align:center;"  id="lang-overview-division-country"><a name="country-devision"></a><?php echo $translation["overview"]["division-country"] ?? "Division: Country"; ?></td></tr>
 
 <?php
 

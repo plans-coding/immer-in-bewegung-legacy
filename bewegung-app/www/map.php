@@ -1,14 +1,12 @@
 <?php
+    include '_data.php';
+    $pageTitle = $translation["map"]["title"] ?? "Map";
+    $contentMargin = "0";
+    $widthRestriction = false;
+    $noFoot = true;
+    include '_head.php';
 
-$pageTitle = "Map";
-$contentMargin = "0";
-$widthRestriction = false;
-$noFoot = true;
-include '_head.php';
-include '_data.php';
-
-$color = "grey";
-
+    $color = "grey";
 ?>
 
 <?php
@@ -50,19 +48,19 @@ $dropdown = '<select name="country_dd" id="country_dd" style="max-width:100%;fon
 $selected = "";
 
 
-$dropdown.='<option value="?">Overall route for all trips</option>';
+$dropdown.='<option value="?" id="lang-map-overall-route">'.($translation["map"]["overall-route"] ?? "Overall route for all trips").'</option>';
 $dropdown.='<optgroup disabled="disabled" style="margin-top: 1em;"></optgroup>';
 
 if (isset($_GET["map"])) { if ($_GET["map"]=="all_accommodation" ) { $selected="selected"; } }
 
-$dropdown.='<option value="?map=all_accommodation" '.$selected.'>All accommodations from all countries (VERY SLOW)</option>';
+$dropdown.='<option value="?map=all_accommodation" '.$selected.' id="lang-map-all-accommodations">'.($translation["map"]["all-accommodations"] ?? "All accommodations from all countries (VERY SLOW)").'</option>';
 $dropdown.='<optgroup disabled="disabled" style="margin-top: 1em;"></optgroup>';
 
 foreach ($period as $value) {
 	$country_get = isset($_GET["country"]) ? $_GET["country"] : '';
 	if ($value == $country_get ) { $selected="selected"; } else { $selected=""; }
 	if ($value!="-" && $value!="" && strpos($value,"?")===false && strpos($value,"(")===false) {
-		$dropdown.='<option value="?country='.$value.'" '.$selected.'>'.$value.' – Accommodations</option>'."\n";
+		$dropdown.='<option value="?country='.$value.'" '.$selected.'>'.$value.' – '.($translation["map"]["accommodations"] ?? "Accommodations").'</option>'."\n";
 	}
 }
 $dropdown.='</select>';
@@ -97,7 +95,7 @@ $dropdown.='</select>';
 
 <script>
     // Initialize the map
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var map = L.map('map').setView([59.32, 18.06], 5);
 
     // Add a tile layer (OpenStreetMap in this example)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

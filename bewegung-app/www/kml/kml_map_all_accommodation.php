@@ -30,8 +30,8 @@ foreach ($tripDetails as $tripNumber) {
 
             // Add KML Placemark for the point
             $kml .= '  <Placemark>' . PHP_EOL;
-            $kml .= '    <name>Accommodation, night ' . $living_no . ': ' . explode(",", $tripDetail["Accommodation"])[0] . '</name>' . PHP_EOL;
-            $kml .= '    <description><![CDATA[<b>Accommodation:</b> ' . $tripDetail["Accommodation"] . '<br /><b>Date:</b> ' . $tripDetail["Date"] . ' <b>Trip:</b> <a href="trip.php?id='.$tripNumber2ID[$tripDetail["TripNumber"]].'#'.$tripDetail["Date"].'">' . $tripNumber2ID[$tripDetail["TripNumber"]] . '</a> <b>Coordinates:</b> ' . $original . ']]></description>' . PHP_EOL;
+            $kml .= '    <name>'.($translation["map-pin"]["accommodation-night"] ?? 'Accommodation, night').' ' . $living_no . ': ' . explode(",", $tripDetail["Accommodation"])[0] . '</name>' . PHP_EOL;
+            $kml .= '    <description><![CDATA[<b>Accommodation:</b> ' . $tripDetail["Accommodation"] . '<br /><b>'.($translation["map-pin"]["date"] ?? 'Date').':</b> ' . $tripDetail["Date"] . ' <b>'.($translation["map-pin"]["trip"] ?? 'Trip').':</b> <a href="trip.php?id='.$tripNumber2ID[$tripDetail["TripNumber"]].'#'.$tripDetail["Date"].'">' . $tripNumber2ID[$tripDetail["TripNumber"]] . '</a> <b>'.($translation["map-pin"]["coordinates"] ?? 'Coordinates').':</b> ' . $original . ']]></description>' . PHP_EOL;
             $kml .= '    <Point>' . PHP_EOL;
             $kml .= '      <coordinates>' . trim($coordinate[1]) . ',' . trim($coordinate[0]) . ',0</coordinates>' . PHP_EOL;
             $kml .= '    </Point>' . PHP_EOL;

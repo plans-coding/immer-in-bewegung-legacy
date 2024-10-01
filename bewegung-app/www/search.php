@@ -44,7 +44,7 @@ if ($search) {
 		//if ($tripBlock[$column["A"]]=="U") { $color=$abroad_color; } else if ($tripBlock[$column["A"]]=="I") { $color=$sweden_color; } else if ($tripBlock[$column["A"]]=="D") { $color=$denmark_color; } else { $color="#e3e3e3"; }
 
 		if (preg_grep($searchStringPattern, $tripBlock)) { //Ord: /\\b$search\\b/i Alla: /$search/i
-			if (! $trip_match) { echo '<div style="margin-bottom:5pt;font-size:14pt;"><b>Trips</b></div>'; $trip_match = true; } //Visa rubrik
+			if (! $trip_match) { echo '<div style="margin-bottom:5pt;font-size:14pt;"><b>'.($translation["search"]["trips"] ?? "Trips").'</b></div>'; $trip_match = true; } //Visa rubrik
 
 			echo '<a href="trip.php?id='.urlencode($tripBlock["TripID"]).'"><div style="border-radius:3pt;color:#fff;background-color:'.$color.';margin-bottom:5pt;align-items: center;padding:5pt;">';
 			echo '<div style="width:40pt;display:inline-block;">'.$tripBlock["TripID"].'</div>';
@@ -64,7 +64,7 @@ if ($search) {
 				$color = $trip_settings[substr($day["TripNumber"],0,1)]["Color"];
 				//if ($day[$column["P"]]=="U") { $color=$abroad_color; } else if ($day[$column["P"]]=="I") { $color=$sweden_color; } else if ($day[$column["P"]]=="D") { $color=$denmark_color; } else { $color="#e3e3e3"; }
 
-				if (! $day_match) { echo '<div style="margin-bottom:5pt;font-size:14pt;"><b>Day notes</b></div>'; $day_match = true; } //Visa rubrik
+				if (! $day_match) { echo '<div style="margin-bottom:5pt;font-size:14pt;"><b>'.($translation["search"]["day-notes"] ?? "Day Notes").'</b></div>'; $day_match = true; } //Visa rubrik
 
 				echo '<div class="searchDay" style="border-radius:3pt;margin-bottom:5pt;padding:5pt;">';
 				echo '<div style="margin-bottom:5pt;display:flex;gap:2pt;align-items:center;flex-wrap:wrap;">';
@@ -79,7 +79,7 @@ if ($search) {
 
 	}
 
-	if (! $trip_match && ! $day_match ) { echo '<div style="margin-bottom:5pt;font-size:14pt;"><b>No search result</b></div>'; }
+	if (! $trip_match && ! $day_match ) { echo '<div style="margin-bottom:5pt;font-size:14pt;"><b>'.($translation["search"]["no-match"] ?? "No search result").'</b></div>'; }
 
 }
 

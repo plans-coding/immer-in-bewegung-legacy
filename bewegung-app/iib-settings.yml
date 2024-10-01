@@ -12,11 +12,17 @@ trip-data:
 
 ### Change Immich settings
 immich-settings:
-  immich-server-address: http://localhost:2283/ # Front-end address - Remember last dash /
 
+  ## Change to false if you want to use the app without Immich
+  use-immich: true
+
+  ## Front-end address (for web app embedding, i.e. iframe in browser window)
+  immich-server-address: http://localhost:2283/ # Remember last dash /
+
+  ## Back-end address (for api requests inside docker network)
   # If you are using Docker, this address should probably NOT be changed (http://immich_server:3001/api/)
   # If you deploy file to web server directly then it is probably http://127.0.0.1:2283/api/
-  immich-server-api-address: http://immich_server:3001/api/ # Back-end address - Remember last dash /
+  immich-server-api-address: http://immich_server:3001/api/ # Remember last dash /
 
    # Generate and paste an api key in Immich under http://localhost:2283/user-settings?isOpen=api-keys
   immich-server-api-key: OqMvcxTWJ2VJpSRBbTxjAFFYN0KXJMSQLZbUBMY2a8
@@ -34,6 +40,9 @@ trip-categories:
   - category: Attachment trip
     category-abbreviation: D
     category-color: C60C30
+
+### Language settings
+app-language: en # en, sv, or da
 
 ### Change this only if you want to change country definitions
 countries:

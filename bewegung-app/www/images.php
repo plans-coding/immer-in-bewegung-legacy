@@ -1,10 +1,10 @@
 <?php
-    $pageTitle = "Trip Images";
+    include '_data.php';
+    $pageTitle = $translation["images"]["title"] ?? "Trip Images";
     $contentMargin = "0";
     $widthRestriction = false;
     $noFoot = true;
     include '_head.php';
-	include '_data.php';
 ?>
 <?php
 
@@ -60,23 +60,23 @@ $i++;
     <div style="display: flex; align-items: center; flex: 1;">
         <?php
             if ($prev!="") {
-                echo '<a href="'.$prev.'" style="display: flex; align-items: center;color:'.$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"].';"><img src="img/plans_arrow.php?color='.str_replace("#","",$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"]).'" style="height:18pt;margin-right:5pt;" /><b id="prevDayText">Previous day</b></a>';
+                echo '<a href="'.$prev.'" style="display: flex; align-items: center;color:'.$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"].';"><img src="img/plans_arrow.php?color='.str_replace("#","",$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"]).'" style="height:18pt;margin-right:5pt;" /><b id="prevDayText">'.($translation["images"]["previous-day"] ?? "Previous day").'</b></a>';
             }
         ?>
     </div>
     <div style="flex:1;text-align:center;">
-    <?php echo '<a href="trip.php?id='.$_GET["trip"].'"><div style="background-color:'.$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"].';display:inline-block;padding:5pt;border-radius:2pt;color:#fff;"><span id="backText">Back to trip </span>'.$_GET["trip"].'</div></a>'; ?>
+    <?php echo '<a href="trip.php?id='.$_GET["trip"].'"><div style="background-color:'.$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"].';display:inline-block;padding:5pt;border-radius:2pt;color:#fff;"><span id="backText">'.($translation["images"]["back"] ?? "Back to trip").' </span>'.$_GET["trip"].'</div></a>'; ?>
     </div>
     <div style="flex:1;text-align:center;">
         <?php echo $dropdown; ?>
     </div>
     <div style="flex:1;text-align:center;">
-    <?php echo '<a href="'.$immich_href.'" target="_blank" style="display: inline-flex; align-items: center;padding:5pt;border-radius:2pt;color:#fff;justify-content: center;background-color:#000;"><span id="openinText">Open in&nbsp;</span><img id="openinLogo" src="img/immich-logo-inline-dark.png" style="height:18pt;margin-right:5pt;vertical-align:middle;" /><img id="openinLogoSmall" src="img/immich-logo-inline-dark-small.png" style="height:18pt;vertical-align:middle;" /></a>'; ?>
+    <?php echo '<a href="'.$immich_href.'" target="_blank" style="display: inline-flex; align-items: center;padding:5pt;border-radius:2pt;color:#fff;justify-content: center;background-color:#000;"><span id="openinText">'.($translation["images"]["open-in"] ?? "Open in").'&nbsp;</span><img id="openinLogo" src="img/immich-logo-inline-dark.png" style="height:18pt;margin-right:5pt;vertical-align:middle;" /><img id="openinLogoSmall" src="img/immich-logo-inline-dark-small.png" style="height:18pt;vertical-align:middle;" /></a>'; ?>
     </div>
     <div style="flex:1;text-align:right;">
         <?php
             if ($next!="") {
-                echo '<a href="'.$next.'" style="display: flex; align-items: center;justify-content: flex-end;color:'.$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"].'"><b id="nextDayText">Next day</b><img src="img/plans_arrow.php?color='.str_replace("#","",$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"]).'" style="height:18pt;margin-left:5pt;transform: rotate(180deg);" /></a>';
+                echo '<a href="'.$next.'" style="display: flex; align-items: center;justify-content: flex-end;color:'.$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"].'"><b id="nextDayText">'.($translation["images"]["next-day"] ?? "Next day").'</b><img src="img/plans_arrow.php?color='.str_replace("#","",$trip_settings[$tripBlocks[$_GET["trip"]]["TripType"]]["Color"]).'" style="height:18pt;margin-left:5pt;transform: rotate(180deg);" /></a>';
             }
         ?>
     </div>

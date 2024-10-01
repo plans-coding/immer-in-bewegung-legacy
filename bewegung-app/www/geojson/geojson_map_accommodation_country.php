@@ -35,14 +35,14 @@ foreach ($tripDetails as $tripNumber) {
                         'coordinates' => [floatval(trim($coordinate[1])), floatval(trim($coordinate[0]))]
                     ],
                     'properties' => [
-                        'name' => 'Accommodation, night ' . $living_no . ': ' . explode(",", $tripDetail["Accommodation"])[0],
-                        'description' => "<b>Accommodation:</b> " . $tripDetail["Accommodation"] . 
-                                         "<br /><b>Date:</b> " . $tripDetail["Date"] . 
-                                         " <b>Trip:</b> <a href=\"trip.php?id=" . 
+                        'name' => ($translation["map-pin"]["accommodation-night"] ?? 'Accommodation, night').' ' . $living_no . ': ' . explode(",", $tripDetail["Accommodation"])[0],
+                        'description' => "<b>".($translation["map-pin"]["accommodation"] ?? 'Accommodation').":</b> " . $tripDetail["Accommodation"] . 
+                                         "<br /><b>".($translation["map-pin"]["date"] ?? 'Date').":</b> " . $tripDetail["Date"] . 
+                                         " <b>".($translation["map-pin"]["trip"] ?? 'Trip').":</b> <a href=\"trip.php?id=" . 
                                          $tripNumber2ID[$tripDetail["TripNumber"]] . 
                                          "#" . $tripDetail["Date"] . "\">" . 
                                          $tripNumber2ID[$tripDetail["TripNumber"]] . 
-                                         "</a> <b>Coordinates:</b> " . $original
+                                         "</a> <b>".($translation["map-pin"]["coordinates"] ?? 'Coordinates').":</b> " . $original
                     ]
                 ];
             }

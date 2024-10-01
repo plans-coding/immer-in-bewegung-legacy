@@ -1,7 +1,8 @@
 <?php
-    $pageTitle = "About";
-    $contentMargin = "auto";
-    include '_head.php';
+  include '_data.php';
+  $pageTitle = $translation["about"]["title"] ?? "About";
+  $contentMargin = "auto";
+  include '_head.php';
 ?>
 <div style="margin:10pt;text-align:center;">
 <div><img src="img/frog_g_150.webp" style="margin-top:40pt;" /></div>
@@ -26,10 +27,10 @@
       });
     </script>
 
-<h1 class="normal" style="margin-bottom:10pt;">About</h1>
+<h1 class="normal" style="margin-bottom:10pt;" id="lang-about-title"><?php echo $translation["about"]["title"] ?? "About"; ?></h1>
 <h1 class="normal" style="margin-top:0;font-size:16pt;"><?php include 'version'; ?></h1>
-<p style="line-height:26pt;"><span class="immer-in-font-uc">Immer in</span>&nbsp;<span class="bewegung-font-uc">Bewegung</span> is your open source, lightweight, and future proof travel documentation app.</p>
-<p>Check for updates at <b><a target="_blank" href="https://bewegung.app/">bewegung.app</a></b>.</p>
+<p style="line-height:26pt;"><span class="immer-in-font-uc">Immer in</span>&nbsp;<span class="bewegung-font-uc">Bewegung</span> <span id="lang-about-description"><?php echo $translation["about"]["description"] ?? "is your open source, lightweight, and future proof travel documentation app."; ?></span></p>
+<p><span id="lang-about-update"><?php echo $translation["about"]["update"] ?? "Check for updates at"; ?> </span> <b><a target="_blank" href="https://bewegung.app/">bewegung.app</a></b>.</p>
 
 <?php
 /*

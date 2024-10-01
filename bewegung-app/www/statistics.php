@@ -1,16 +1,15 @@
 <?php
-    $pageTitle = "Statistics";
-    $contentMargin = "auto";
-    include '_head.php';
-	include '_data.php';
-
+  include '_data.php';
+  $pageTitle = $translation["statistics"]["title"] ?? "Statistics";
+  $contentMargin = "auto";
+  include '_head.php';
 	include 'dep/chartjs/chartjs.php';
 
 ?>
 <div style="margin:10pt;">
 <?php
 
-echo '<h1 class="normal">Statistics</h1>';
+echo '<h1 class="normal" id="lang-statistics-title">'.($translation["statistics"]["title"] ?? "Statistics").'</h1>';
 
 //print_r($tripDetails);
 //print_r($trip_categories);
@@ -102,11 +101,11 @@ foreach ( $settings["trip-categories"] as $tripType ) {
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5pt; padding: 0;max-width:100%;">
     <div style="">
-		<div>Count of unique countries</div>
+		<div><span id="lang-statistics-unique-countries"><?php echo ($translation["statistics"]["unique-countries"] ?? "Count of unique countries"); ?></span></div>
 		<div style="line-height:1em;font-family: 'Cairo', sans-serif;font-weight: bold;font-size:3em;"><?php echo sizeof($totalCountries); ?></div>
 	</div>
     <div style="text-align:right;">
-		Number of trips in total<br />
+		<span id="lang-statistics-total-trips"><?php echo ($translation["statistics"]["total-trips"] ?? "Number of trips in total"); ?></span><br />
 		<span style="line-height:1em;font-family: 'Cairo', sans-serif;font-weight: bold;font-size:3em;"><?php echo $chartTotalTrips; ?></span>
 	</div>
 </div>
@@ -144,14 +143,14 @@ foreach ( $settings["trip-categories"] as $tripType ) {
 
 <?php
 
-echo '<div style="text-align:center;margin-bottom:20pt;"><h2>Count over visits per country</h2></div>';
+echo '<div style="text-align:center;margin-bottom:20pt;"><h2>'.($translation["statistics"]["visit-country-count"] ?? "Count over visits per country").'</h2></div>';
 
 echo '<div style="overflow-x: clip;">';
 echo '<table style="border-collapse: collapse;" id="visitsPerCountry">';
 
 echo '<thead style="position:sticky;top:0;background-color:#fff;">';
-echo '<tr style="font-weight:normal;"><td></td><td colspan="3"><i>One qualified visit per trip</i></td><td><i>More than one qualified visit per trip</i></td><td><i>Border crossings (in and out)</i></td></tr>';
-echo '<tr><td><b>Country</b></td><td><b>Ordinary length</b></td><td><b>Shorter stop incl.</b></td><td><b>Shorter and very short stop incl.</b></td><td><b>Ordinary length</b></td><td><b>Minimal number</b></td></tr>';
+echo '<tr style="font-weight:normal;"><td></td><td colspan="3"><i>'.($translation["statistics"]["1-qualified"] ?? "One qualified visit per trip").'</i></td><td><i>'.($translation["statistics"]["many-qualified"] ?? "More than one qualified visit per trip").'</i></td><td><i>'.($translation["statistics"]["border-crossings"] ?? "Border crossings (in and out)").'</i></td></tr>';
+echo '<tr><td><b>'.($translation["statistics"]["country"] ?? "Country").'</b></td><td><b>'.($translation["statistics"]["ordinary-length"] ?? "Ordinary length").'</b></td><td><b>'.($translation["statistics"]["shorter-stop"] ?? "Shorter stop incl.").'</b></td><td><b>'.($translation["statistics"]["short-very-short"] ?? "Shorter and very short stop incl.").'</b></td><td><b>'.($translation["statistics"]["ordinary-length"] ?? "Ordinary length").'</b></td><td><b>'.($translation["statistics"]["minimal-number"] ?? "Minimal number").'</b></td></tr>';
 echo '</thead>';
 
 //print_r($stat_countries);
@@ -188,24 +187,24 @@ echo '</div>';
 
 
 <div id="statComment" style="padding:10pt;font-family: 'Francois+One', sans-serif;margin-top:10pt;">
-All columns display visits of significant importance. The actual number of border crossings may therefore
+<?php echo ($translation["statistics"]["note"] ?? "All columns display visits of significant importance. The actual number of border crossings may therefore
 be greater than reported. Stops that are crucial for the travel experience are considered significant.
 A qualified visit is defined as a visit that does not resume a previous visit after a break caused by a
-short or very short visit to another country.
+short or very short visit to another country."); ?>
 </div>
 <br />
 
 <?php
 
-echo '<div style="text-align:center;"><h2>Number of overnight stays per country</h2>';
+echo '<div style="text-align:center;"><h2>'.($translation["statistics"]["visit-country-count"] ?? "Number of overnight stays per country").'</h2>';
 
-echo '<div style="margin-top:10pt;margin-bottom:10pt;"><b>Top ten countries</b></div><div style="width:425pt;max-width:100%;margin:auto;"><canvas id="statPerCountry"></canvas></div>';
+echo '<div style="margin-top:10pt;margin-bottom:10pt;"><b>'.($translation["statistics"]["top-ten-countries"] ?? "Top ten countries").'</b></div><div style="width:425pt;max-width:100%;margin:auto;"><canvas id="statPerCountry"></canvas></div>';
 
 echo '</div>';
 
 //echo '<div style="overflow:hidden;overflow-x: auto;">';
 echo '<table style="margin:auto;margin-top:20pt;" id="nightPerCountry">';
-echo '<thead style="position:sticky;top:0;background-color:#fff;"><tr style=""><td><b>Country</b></td><td><b>Number of overnight stays</b></td></tr></thead>';
+echo '<thead style="position:sticky;top:0;background-color:#fff;"><tr style=""><td><b>'.($translation["statistics"]["country"] ?? "Country").'</b></td><td><b>'.($translation["statistics"]["overnight-stays"] ?? "Number of overnight stays").'</b></td></tr></thead>';
 
 foreach ( $accommodation_countries as $accommodation_country => $value ) {
 	if ( $value != 0) { echo '<tr><td>'.$accommodation_country.'</b></td><td>'.$value.'</td></tr>'."\n"; }

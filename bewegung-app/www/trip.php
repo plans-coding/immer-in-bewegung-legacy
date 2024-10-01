@@ -1,9 +1,9 @@
 <?php
 
-$pageTitle = "Trip Events";
+include '_data.php';
+$pageTitle = $_GET["id"];
 $contentMargin = "auto";
 include '_head.php';
-include '_data.php';
 $underline="";
 $title="";
 
@@ -69,7 +69,7 @@ $nextTripIDCurrentTripType = array_column($filteredArray, "TripID")[$nextIndexCu
 	</div>
 		<div>
 			<select id="selectTripTypeAll" onchange="window.location.href = 'trip.php?id='+this.value" style="background-color:grey;color:#fff;font-size:12pt;padding:2pt;display:inline-block;width:100pt;border-color:#fff;">
-				<option value="<?php echo urldecode($_GET["id"]); ?>" selected style="text-align:center;">All trips</option>
+				<option value="<?php echo urldecode($_GET["id"]); ?>" selected style="text-align:center;" id="lang-trip-all-trips"><?php echo ($translation["trip"]["all-trips"] ?? "All trips"); ?></option>
 				<?php
 				foreach ($tripBlocks as $tripBlock) {
 					if ( urldecode($_GET["id"]) == $tripBlock["TripID"] ) { $selected=' style="background-color:#000;"'; } else { $selected=""; }
@@ -127,11 +127,11 @@ $nextTripIDCurrentTripType = array_column($filteredArray, "TripID")[$nextIndexCu
 </table>
 <!-- Andra resor navigering slut -->
 
-<h1 class="normal"><?php echo urldecode($_GET["id"]); ?> to <?php echo $tripBlocks[urldecode($_GET["id"])]["OverallDestination"]; ?></h1>
+<h1 class="normal"><?php echo urldecode($_GET["id"]); ?> <span id="lang-trip-to"><?php echo $translation["trip"]["to"] ?? "to"; ?></span> <?php echo $tripBlocks[urldecode($_GET["id"])]["OverallDestination"]; ?></h1>
 
 <table class="trip_table_details" style="width:100%;">
 
-<tr><td colspan="2" style="background-color:<?php echo $color_header; ?>;color:#ffffff;text-align:center;">Summary</td></tr>
+<tr><td colspan="2" style="background-color:<?php echo $color_header; ?>;color:#ffffff;text-align:center;" id="lang-trip-summary"><?php echo $translation["trip"]["summary"] ?? "Summary"; ?></td></tr>
 <tr><td colspan="2">
 
 <div style="padding:10pt;" id="info">
@@ -190,7 +190,7 @@ $nextTripIDCurrentTripType = array_column($filteredArray, "TripID")[$nextIndexCu
 
     // Add a tile layer (OpenStreetMap in this example)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '<a href="kml.php?type=overview&amp;id=<?php echo $_GET["id"]; ?>">Overview KML</a>, <a href="kml.php?type=accommodation&amp;id=<?php echo $_GET["id"]; ?>">Accommodation KML</a>, <a href="kml.php?type=assets&amp;id=<?php echo $_GET["id"]; ?>">Assets KML</a>',
+        attribution: '<a href="kml.php?type=overview&amp;id=<?php echo $_GET["id"]; ?>"><?php echo ($translation["trip"]["overview"] ?? 'Overview'); ?> KML</a>, <a href="kml.php?type=accommodation&amp;id=<?php echo $_GET["id"]; ?>"><?php echo ($translation["trip"]["accommodations"] ?? 'Accommodations'); ?> KML</a><?php if ( ( $settings["immich-settings"]["use-immich"] ?? null ) === true ) { ?>, <a href="kml.php?type=assets&amp;id=<?php echo $_GET["id"]; ?>"><?php echo ($translation["trip"]["assets"] ?? 'Assets'); ?> KML</a><?php } ?>',
         maxZoom: 19
     }).addTo(map);
 
@@ -311,6 +311,17 @@ $nextTripIDCurrentTripType = array_column($filteredArray, "TripID")[$nextIndexCu
         'Assets': L.featureGroup()
     };
 
+    var layerGroupsDisplayName = {
+    '<?php echo ($translation["trip"]["overview"] ?? 'Overview'); ?>': layerGroups['Overview'],
+    '<?php echo ($translation["trip"]["accommodations"] ?? 'Accommodations'); ?>': layerGroups['Accommodation'],
+
+    <?php if ( ( $settings["immich-settings"]["use-immich"] ?? null ) === true ) { ?>
+        '<?php echo ($translation["trip"]["assets"] ?? 'Assets'); ?>': layerGroups['Assets']
+    <?php } ?>
+
+};
+
+
     Promise.allSettled([
         fetch('geojson.php?type=overview&id=<?php echo $_GET["id"]; ?>').then(response => response.json()),
         fetch('geojson.php?type=accommodation&id=<?php echo $_GET["id"]; ?>').then(response => response.json()),
@@ -348,7 +359,7 @@ $nextTripIDCurrentTripType = array_column($filteredArray, "TripID")[$nextIndexCu
         }
 
         // Add layer controls
-        L.control.layers(null, layerGroups, {collapsed: false}).addTo(map);
+        L.control.layers(null, layerGroupsDisplayName, {collapsed: false}).addTo(map);
 
         map.addLayer(layerGroups['Overview']);
 
@@ -375,11 +386,11 @@ document.querySelector('meta[name="theme-color"]').setAttribute('content', '<?ph
 <div id="desc" style="padding-bottom:10pt;"><?php echo $tripBlocks[urldecode($_GET["id"])]["TripDescription"]; ?></div>
 
 <?php //if (strpos($_GET["id"],"-SE-")) { $position=""; } else { $position=" Sweden"; } ?>
-<div><b>Departure Date<?php //echo $position; ?>:</b> <span id="total_days"><?php echo $tripBlocks[urldecode($_GET["id"])]["DepartureDate"]; ?></span></div>
-<div><b>Return Date<?php //echo $position; ?>:</b> <span id="total_days"><?php echo $tripBlocks[urldecode($_GET["id"])]["ReturnDate"]; ?></span></div>
-<div><b>Number of Days:</b> <span id="total_days"><?php echo $tripBlocks[urldecode($_GET["id"])]["NumberOfDays"]; ?></span></div>
-<div><b>ID:</b> <span id="span_id"><?php echo $_GET["id"]; ?></span></div>
-<div><b>Number of Countries:</b> <span id="total_countries"><?php
+<div><b id="lang-trip-departure-date"><?php echo $translation["trip"]["departure-date"] ?? "Departure Date"; ?><?php //echo $position; ?></b><b>:</b> <span id="total_days"><?php echo $tripBlocks[urldecode($_GET["id"])]["DepartureDate"]; ?></span></div>
+<div><b id="lang-trip-return-date"><?php echo $translation["trip"]["return-date"] ?? "Return Date"; ?><?php //echo $position; ?></b><b>:</b> <span id="total_days"><?php echo $tripBlocks[urldecode($_GET["id"])]["ReturnDate"]; ?></span></div>
+<div><b id="lang-trip-day-count"><?php echo $translation["trip"]["day-count"] ?? "Number of Days"; ?></b><b>:</b> <span id="total_days"><?php echo $tripBlocks[urldecode($_GET["id"])]["NumberOfDays"]; ?></span></div>
+<div><b id="lang-trip-id"><?php echo $translation["trip"]["id"] ?? "ID"; ?></b><b>:</b> <span id="span_id"><?php echo $_GET["id"]; ?></span></div>
+<div><b id="lang-trip-country-count"><?php echo $translation["trip"]["country-count"] ?? "Number of Countries"; ?></b><b>:</b> <span id="total_countries"><?php
 
 				// ### Räkna antalet länder
 				// Ta bort innehåll i hakparenteser och hakparenteserna själva
@@ -424,7 +435,7 @@ document.querySelector('meta[name="theme-color"]').setAttribute('content', '<?ph
 
 ?></span></div>
 
-<div style="padding-top:10pt;"><b>Country Trip Movements:</b><br><span id="countries"><?php
+<div style="padding-top:10pt;"><b id="lang-trip-country-trip-movements"><?php echo ($translation["trip"]["country-trip-movements"] ?? "Country Trip Movements"); ?></b><b>:</b><br><span id="countries"><?php
 
 
 // RÖRELSER
@@ -441,11 +452,11 @@ foreach ($parts as $part) {
 		if ($comment) { echo '<div style="display:inline-block;height:13pt;margin-left:4pt;padding-left:2pt;padding-right:2pt;border-radius:2pt;color:#000;background-color:#f3f3f3;font-size:10pt;padding-top:3pt;">'.$comment.'</div>'; }
 		echo '</div>';
 	} elseif ( substr($part,0,2) == "**" ) {
-		echo '<div style="display:inline-flex;max-width:190pt;margin-top:1pt;margin-bottom:1pt;padding:2pt 2pt 0pt 2pt;border-radius:2pt;"><span style="border-bottom: 1pt dashed;" title="Very short visit of without significant importance">'.substr($part,2).'</span></div>';
+		echo '<div style="display:inline-flex;max-width:190pt;margin-top:1pt;margin-bottom:1pt;padding:2pt 2pt 0pt 2pt;border-radius:2pt;"><span style="border-bottom: 1pt dashed;" title="'.($translation["trip"]["very-short"] ?? "Very short visit of without significant importance").'">'.substr($part,2).'</span></div>';
 	} elseif ( substr($part,0,1) == "*" ) {
-		echo '<div style="display:inline-flex;max-width:190pt;margin-top:1pt;margin-bottom:1pt;padding:2pt 2pt 0pt 2pt;border-radius:2pt;"><span style="border-bottom: 1pt solid;" title="Shorter visit of significant importance">'.substr($part,1).'</span></div>';
+		echo '<div style="display:inline-flex;max-width:190pt;margin-top:1pt;margin-bottom:1pt;padding:2pt 2pt 0pt 2pt;border-radius:2pt;"><span style="border-bottom: 1pt solid;" title="'.($translation["trip"]["shorter"] ?? "Shorter visit of significant importance").'">'.substr($part,1).'</span></div>';
 	} elseif ( substr($part,0,1) == "+" ) {
-		echo '<div style="display:inline-flex;max-width:190pt;margin-top:1pt;margin-bottom:1pt;padding:2pt 2pt 0pt 2pt;border-radius:2pt;"><span style="border-bottom: 1pt solid #1d655e;" title="Restore, counts only if * and ** count">'.substr($part,1).'</span></div>';
+		echo '<div style="display:inline-flex;max-width:190pt;margin-top:1pt;margin-bottom:1pt;padding:2pt 2pt 0pt 2pt;border-radius:2pt;"><span style="border-bottom: 1pt solid #1d655e;" title="'.($translation["trip"]["restore"] ?? "Restore, counts only if * and ** count").'">'.substr($part,1).'</span></div>';
 	} else {
 		echo $part;
 	}
@@ -461,7 +472,7 @@ foreach ($parts as $part) {
 ?></span></div>
 
 
-<div style="padding-top:10pt;"><b>Overall Route:</b><br><span id="route"><?php
+<div style="padding-top:10pt;"><b id="lang-trip-overall-route"><?php echo ($translation["trip"]["overall-route"] ?? "Overall Route"); ?></b><b>:</b><br><span id="route"><?php
 
 	preg_match_all('/\{(.*?)\}/', $tripBlocks[urldecode($_GET["id"])]["OverallMapPins"], $places);
 	$nb="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -492,7 +503,7 @@ if ( isset($settings["plugin"]["immich-summary-album"]["activated"]) && $setting
 
 </td></tr>
 
-<tr><td colspan="2" style="background-color:<?php echo $color_header; ?>;color:#ffffff;text-align:center;">Day per day</td></tr>
+<tr><td colspan="2" style="background-color:<?php echo $color_header; ?>;color:#ffffff;text-align:center;" id="lang-trip-day-per-day"><?php echo ($translation["trip"]["day-per-day"] ?? "Day per day"); ?></td></tr>
 <tr><td colspan="2" style="">
 <?php
 
@@ -501,12 +512,14 @@ echo '<table>';
 
 foreach ($tripDetails[$_GET["id"]] as $tripDetail) {
 	// explode(" ",$tripDetail["HelpText"])[2] <- for weekday from spreadsheet
-	echo '<tr><td style="vertical-align:top;padding-right:20pt;width:100pt;"><b><a name="'.$tripDetail["Date"].'"></a>'.$tripDetail["Date"].'</b><br />'.date('l',strtotime($tripDetail["Date"])).'</td><td style="vertical-align:top;">'.str_replace("&lt;BR&gt;","<br />",$tripDetail["Events"]).'<br /><a href="images.php?trip='.$_GET["id"].'&date='.str_replace("-","",$tripDetail["Date"]).'" style="color:'.$color.';text-decoration:none;">';
-	if (isset($settings["inactivate-day-photos-button"])) {
-		if ( !in_array($_GET["id"], explode(", ",$settings["inactivate-day-photos-button"]) ) ) { echo '<div class="iib-action-button">Show photos</div>'; }
-	} else {
-		echo '<div class="iib-action-button">Show photos</div>';
-	}
+	echo '<tr><td style="vertical-align:top;padding-right:20pt;width:100pt;"><b><a name="'.$tripDetail["Date"].'"></a>'. $tripDetail["Date"].'</b><br />'.( $translation["trip"][ strtolower( date('l',strtotime($tripDetail["Date"]) ) ) ] ?? date('l',strtotime($tripDetail["Date"]) ) ).'</td><td style="vertical-align:top;">'.str_replace("&lt;BR&gt;","<br />",$tripDetail["Events"]).'<br /><a href="images.php?trip='.$_GET["id"].'&date='.str_replace("-","",$tripDetail["Date"]).'" style="color:'.$color.';text-decoration:none;">';
+    if ( ( $settings["immich-settings"]["use-immich"] ?? null ) === true ) {
+        if (isset($settings["inactivate-day-photos-button"])) {
+            if ( !in_array($_GET["id"], explode(", ",$settings["inactivate-day-photos-button"]) ) ) { echo '<div class="iib-action-button">'.($translation["trip"]["show-photos"] ?? "Show photos").'</div>'; }
+        } else {
+            echo '<div class="iib-action-button" id="lang-trip-show-photos">'.($translation["trip"]["show-photos"] ?? "Show photos").'</div>';
+        }
+    }
 	if ( isset($settings["plugin"]["additional-trip-objects"]["activated"]) && $settings["plugin"]["additional-trip-objects"]["activated"] === true ) {
 		include $settings["plugin"]["additional-trip-objects"]["initiating-file"];
 	}
