@@ -1,7 +1,7 @@
 # Immer in Bewegung 
 Open source travel documentation app for self-hosting
 
-Available in: 🇬🇧 English, 🇸🇪 Swedish, 🇩🇰 Danish, 🇩🇪 German, 🇳🇱 Dutch, or define your own.
+Available in: 🇬🇧 English, 🇸🇪 Swedish, 🇩🇰 Danish, 🇩🇪 German, 🇳🇱 Dutch, or define your own language.
 
 ## Installation instructions
 See installation instructions at https://bewegung.app/docs/installation
