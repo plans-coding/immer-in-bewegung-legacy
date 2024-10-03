@@ -7,7 +7,7 @@ Available in
 * 🇩🇰 Danish
 * 🇩🇪 German
 * 🇳🇱 Dutch
-* or define your own language.
+or define your own language.
 
 ## Installation instructions
 See installation instructions at https://bewegung.app/docs/installation
