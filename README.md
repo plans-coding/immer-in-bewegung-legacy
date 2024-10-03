@@ -7,6 +7,7 @@ Available in
 * 🇩🇰 Danish
 * 🇩🇪 German
 * 🇳🇱 Dutch
+
 or define your own language.
 
 ## Installation instructions
