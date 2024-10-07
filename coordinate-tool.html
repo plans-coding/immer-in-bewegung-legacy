@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,137 +12,20 @@
     <meta name="msapplication-navbutton-color" content="#e3e3e3">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <style>
+        
         html {height:100%;}
         body{margin: 0;padding: 0;font-family: 'Merriweather', serif;height:100%;font-size:1.2em;}
-        .topBarContainer {z-index:1001;position:sticky;top:0;}
-        .topBar {padding: 0pt;background-color:grey;color:#fff;text-align: center;}
-        .menuBar {display: flex;flex-wrap: wrap;background-color:#f1f1f1;justify-content: space-between;gap:1pt;border-bottom:3pt solid grey;}
-        .menuBar > a {background-color:#e3e3e3;font-family: 'Francois+One', sans-serif;text-align: center;flex:1;cursor:pointer;padding:5pt;color:#000;}
-        .menuBar > a:hover {background-color:#b3b3b3;color:#fff;text-decoration:none;}
-        
-        .container {margin:auto;<br />
-<b>Warning</b>:  Undefined variable $widthRestriction in <b>/www/_head.php</b> on line <b>29</b><br />
-max-width:50em;width:50em;}
-        .normal { margin-top:20pt;margin-bottom:20pt;text-align:center;}
-
-        .inputDataContainer {background-color:grey;padding:2pt;margin:auto;display:inline-block;margin-top:20pt;}
-        .inputDescription {background-color:#fff2cc;margin-right:2pt;text-align:left;line-height:2rem;padding-left:5pt;padding-right:5pt;text-align:center;}
-        .inputData {display:flex;flex-direction:row;}
-        textarea:focus {outline: none;}
-        .inputDataSyntaxCheck {line-height: 2rem;background-color:grey;font-size:14pt;width:25pt;}
-
-        #searchStringPattern {font-family: 'Francois+One', sans-serif;font-size:14pt;border:2pt solid grey;padding:5pt;}
-        
-        /*
-        input[type=text], input[type=date], input[type=datetime-local] {font-family: 'Segoe UI';font-size:14pt;border:2pt solid grey;padding:5pt;}
-        .textareaStd {font-family: 'Segoe UI';font-size:14pt;border:2pt solid grey;padding:5pt;}
-        */
-        
-        input[type=text], #searchStringPattern { font-family: 'Francois+One', sans-serif; }
-
-        .immer-in-font-uc {font-family: 'Cairo', sans-serif;text-transform: uppercase;}
-        .bewegung-font-uc {font-family: 'Righteous', sans-serif;text-transform: uppercase;}
-
-        .trip_table, .trip_table_details {background-color:#e1e1e1;font-family: 'Francois+One', sans-serif;margin-top:10pt;}
-        thead {font-weight:bold;}
-        td {padding:5pt;}
-        .tripBar, .imagesBar {
-            padding: 5pt;
-            background-color: #e3e3e3;
-            font-family: 'Francois+One', sans-serif;
-            display:flex;
-            font-weight:bold;
-            align-items: center;
-            gap:2pt;
-        }
-
-        .button {padding: 10pt 10pt 10pt 10pt;background-color: #004c97;color: #fff;text-align: center;margin:auto;margin-top:10pt;width:209pt;}
-        .button:hover {background-color:#abd5ff;color:#000;cursor:pointer;}
-        .button_inactivated {padding: 10pt 10pt 10pt 10pt;background-color:grey;
-            color: #fff;text-align: center;margin:auto;margin-top:10pt;width:209pt;cursor:default;}
-
-        .filterButton {background-color:#e5f2ff;border-radius:10pt;padding:4pt 7pt 4pt 7pt;cursor:pointer;}
-        
-        a {color:#1d655e;text-decoration:none;}
-
-        h1 {display:block;font-family: 'Cairo', sans-serif;font-weight:bold;color:#000000;font-size:3em;line-height:1.2em;margin-bottom:20pt;}
-            h2 {margin-bottom:0;}
-        .iib-action-button {
-            margin-top: 10pt;
-            display: inline-block;
-            background-color: #000000;
-            color: #ffffff;
-            padding: 2pt;
-            border-radius: 2pt;
-        }
-
         .searchButton {font-family: 'Francois+One', sans-serif;font-size:18pt;background-color:grey;color:#fff;display:flex;cursor:pointer;border:0;}
         .searchButton:hover {background-color:#b3b3b3;}
-
-        #aboutTop, #openinLogoSmall{display:none;}
-
-        #statComment, #statSummary tr:nth-child(even), #nightPerCountry tr:nth-child(even), #visitsPerCountry tr:nth-child(even) {
-            background-color: #e3e3e3; /* Color for even rows */
-        }
-        #chartFlex {height:300pt;}
-        .searchDay {background-color:#e3e3e3;}
-
-        #trip_nav {margin-top:20pt;}
-
-        #searchResult{height:;}
-
-        .pg_grey {background-color:#e3e3e3;}
-        #update_message{background-color:rgb(255,248,220);}
-
-        #selectTripTypeCurrent, #selectTripTypeAll{font-size:20pt;}
-
-        /* ##### ANNAN CSS FÖR MINDRE SKÄRM ##### */
-        @media (max-width: 1440px) {
-            .trip_image_button {font-size:1.2em;}
-            .trip_table {overflow:hidden;word-break:break-all;} /* word-break:break-all; */
-            .trip_table tr {display: grid;grid-template-columns: repeat(5, 1fr);}
-            .trip_table_division {grid-column: 1 / span 5;}
-            .trip_table_country_category {hyphens:auto;line-height:10pt;font-size:0.7em;word-break:break-all;} /* word-break:break-all; */
-            #iib-foot, #lang-menu-syncphp, #lang-menu-aboutphp, #prevDayText, #nextDayText, #backText, #openinText, #openinLogo, #lang-overview-heading {display:none;}
-            #aboutTop, #openinLogoSmall {display:inline-block;}
-            #selectTripTypeCurrent, #selectTripTypeAll, .topBar, .menuBar{font-size:14pt;}
-            #visitsPerCountry {font-size:9pt;margin-top:5pt;}
-            #visitsPerCountry td {padding:0pt;}
-            #lang-overview-paragraph {margin:5pt;}
-            #tripCatCont{margin:10pt 2pt 0pt 2pt;}
-            #chartFlex {height:200pt;width:150pt;}
-            .normal {font-size:30pt;}
-            input::placeholder {font-size: 17pt;}
-            #lang-overview-paragraph{display:none;}
-            #trip_nav {margin-top:2pt;}
-            #map {height:250pt !important;}
-        }
-        /* ##### ANNAN CSS FÖR MINDRE SKÄRM ##### */
 
         /* ##### ANNAN CSS FÖR DARK MODE ##### */
         @media (prefers-color-scheme: dark) {
             a {color:#07ad67;}
-            body, .trip_table, .menulink, thead, .trip_table_details {background-color:#000 !important;}
-            h1, h2,body, .menulink, thead, .trip_table_details > div {color:#fff !important;}
-            .trip_table_division {background-color:#333333 !important;}
-            .trip_table {background-color:#333;}
-            input[type="text"], #searchStringPattern {background-color:#444 !important;color:#fff;}
-            .trip_table_details, menu {background-color:#333 !important;}
-            .searchButton, .trip_image_button {background-color:grey;}
-            .pg_grey { background-color:#333;color:#fff; }
-            .tripBar, .imagesBar{background-color:#333 !important;}
-            .nightNumber{color:#000;}
-            .topBar, #selectTripTypeAll{background-color:#333 !important;}
-            .menuItem{background-color:#000 !important;color:#fff !important;}
-            .searchDay {background-color:#666;}
-            #statComment, #statSummary tr:nth-child(even), #nightPerCountry tr:nth-child(even), #visitsPerCountry tr:nth-child(even) {
-                background-color: #333; /* Color for even rows */
-            }
-            #contentS{background-color:#333 !important;}
-            .menuBar {border-bottom:3pt solid #555;background-color:#333 !important;}
-            #update_message {background-color:#07ad67;color:#000;}
+            body {background-color:#000 !important;}
+            body {color:#fff !important;}
+            input[type="text"] {background-color:#444 !important;color:#fff;}
+            .searchButton {background-color:grey;}
         }
         /* ##### ANNAN CSS FÖR DARK MODE ##### */
 
@@ -170,16 +51,10 @@ max-width:50em;width:50em;}
 </head>
 
 <body>
-    <div style="display:flex;flex-direction:column;height:100%;">
-
-
-
-        <div class="container" style="display: flex; flex-direction: column; height: 100vh;max-width:900pt;width:100%;">
-<div style="margin:10pt;">
-<h1 class="normal" id="lang-sync-title">Coordinate Tool</h1>
-<p id="lang-sync-first-pg"></p>
-
-<div id="map" style="height:300pt;width:100%;max-width:100%;cursor:pointer;"></div>
+    
+    
+    <div style="position:absolute;display:flex;gap:5pt;bottom:10pt;left:10pt;flex-wrap: wrap;margin-right:10pt;z-index:10000;"><input type="text" id="markedCoordinate" style="flex:1;font-size:20pt;padding:5pt;border:3pt solid grey;" disabled /><button class="searchButton" style="align-items:center;padding-left:5pt;" onclick="copyToClipboard();" id="lang-coordTool-copy-coordinates">Copy coordinates</button></div>
+    <div id="coordMap" style="width:100%;height:100%;cursor:pointer;"></div>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -188,7 +63,7 @@ max-width:50em;width:50em;}
 
     <script>
         // Initialize the map
-        const map = L.map('map').setView([59.32, 18.06], 5);
+        const map = L.map('coordMap').setView([59.32, 18.06], 5);
 
         // Add a tile layer (OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -222,21 +97,7 @@ max-width:50em;width:50em;}
         }
 
     </script>
-    <div style="display:flex;gap:5pt;margin-top:10pt;"><input type="text" id="markedCoordinate" style="flex:1;font-size:20pt;padding:5pt;border:3pt solid grey;" disabled /><button class="searchButton" style="align-items:center;padding-left:5pt;" onclick="copyToClipboard();" id="lang-coordTool-copy-coordinates">Copy coordinates</button></div>
-
-</div>
-                
-                                <div id="iib-foot" style="text-align:center;font-size:32pt;padding-top:20pt;padding-bottom:30pt;"><span class="immer-in-font-uc">II</span><span class="bewegung-font-uc">B</span>
-                <!--<br/><div style="font-size:12pt;font-family: 'Francois+One', sans-serif;">Revisit your travel memories</div>--></div>
-                                
-        </div>
-
-
-
-    </div>
-
 
 </body>
-
 
 </html>
