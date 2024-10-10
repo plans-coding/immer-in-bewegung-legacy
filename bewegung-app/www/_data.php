@@ -218,6 +218,10 @@ foreach ($allTripMapsPre as $key => $value) {
     }
 }
 
+if ( ($settings["sheet-sort-order"]["map"]["reversed"] ?? false) === true ) {
+    $allTripMaps = array_reverse($allTripMaps);
+}
+
 //print_r($allTripMaps);
 
 // ### LANGUGAGE FILE

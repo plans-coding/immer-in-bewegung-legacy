@@ -88,15 +88,16 @@ statistics:
   overnight-stays-country: Antal övernattningar per land
   top-ten-countries: Topp tio
   country: Land
-  overnight-stays: Antal övernattningar
+  overnight-stays: Övernattningar
 
-sync:
-  title: Synk
+dataset:
+  title: Dataunderlag
   first-pg: Ladda ner dina senaste resenoteringar från Google Sheet. De behöver vara inloggad från början för att genomföra åtgärderna nedan. Ingen authentisering information kommer att skickas till appen.
   second-pg: Ditt Google Spreadsheet ID enligt din konfiguration
   third-pg: Uppdatera dina filer manuellt genom att <b>höger-klicka</b> på knapparna nedan och spara filerna till mappen <b>data</b>.
-  other-options: Andra alternativ
-  other-options-text: Det finns för närvarande ingen automatisk integration, med det är möjligt att bygga på egen hand mha Google Sheet API som aktiveras i Google Cloud console.<br /><br />Om du använder Microsoft 365 eller en lokal installation av Microsoft Office, LibreOffice eller motsvarande, kan du spara tsv-filer direkt till mappen <b>data</b> med följande namn
+  other-options-text: Om du använder Microsoft 365 eller en lokal installation av Microsoft Office, LibreOffice eller motsvarande, kan du spara tsv-filer direkt till mappen <b>data</b> med följande namn
+  toggle: Växla mellan tabell/koordinatverktyg
+  copy-coordinates: Kopiera koordinater
 
 about:
   title: Om

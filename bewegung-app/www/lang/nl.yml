@@ -88,15 +88,16 @@ statistics:
   overnight-stays-country: Aantal overnachtingen per land
   top-ten-countries: Top tien
   country: Land
-  overnight-stays: Aantal overnachtingen
+  overnight-stays: Overnachtingen
 
-sync:
-  title: Synchronisatie
+dataset:
+  title: Gegevensbasis
   first-pg: Download uw laatste reisnotities van Google Sheet. U moet vanaf het begin ingelogd zijn om de onderstaande acties uit te voeren. Geen authenticatie-informatie wordt naar de app verzonden.
   second-pg: Uw Google Spreadsheet ID volgens uw configuratie
   third-pg: Werk uw bestanden handmatig bij door met de <b>rechtermuisknop</b> op de onderstaande knoppen te klikken en de bestanden op te slaan in de map <b>data</b>.
-  other-options: Andere opties
   other-options-text: Er is momenteel geen automatische integratie, maar het is mogelijk om deze zelf te bouwen met behulp van de Google Sheet API, geactiveerd in de Google Cloud-console.<br /><br />Als u Microsoft 365 of een lokale installatie van Microsoft Office, LibreOffice of een vergelijkbare toepassing gebruikt, kunt u TSV-bestanden rechtstreeks opslaan in de map <b>data</b> met de volgende namen.
+  toggle: Wisselen tussen tabel/coördinatenhulpmiddel
+  copy-coordinates: Coördinaten kopiëren
 
 about:
   title: Over

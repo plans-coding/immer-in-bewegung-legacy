@@ -88,15 +88,16 @@ statistics:
   overnight-stays-country: Antal overnatninger pr. land
   top-ten-countries: Top ti
   country: Land
-  overnight-stays: Antal overnatninger
+  overnight-stays: Overnatninger
 
-sync:
-  title: Synk
+dataset:
+  title: Dataunderlag
   first-pg: Download dine seneste rejsenotater fra Google Sheet. Du skal være logget ind fra starten for at udføre nedenstående handlinger. Ingen autentifikationsinformation vil blive sendt til appen.
   second-pg: Dit Google Spreadsheet ID i henhold til din konfiguration
   third-pg: Opdater dine filer manuelt ved at <b>højreklikke</b> på knapperne nedenfor og gemme filerne i mappen <b>data</b>.
-  other-options: Andre muligheder
   other-options-text: Der er i øjeblikket ingen automatisk integration, men det er muligt at bygge det selv vha. Google Sheet API, som aktiveres i Google Cloud Console.<br /><br />Hvis du bruger Microsoft 365 eller en lokal installation af Microsoft Office, LibreOffice eller lignende, kan du gemme tsv-filer direkte i mappen <b>data</b> med følgende navne
+  toggle: Skift mellem tabel/koordinatværktøj
+  copy-coordinates: Kopier koordinater
 
 about:
   title: Om

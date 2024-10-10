@@ -10,20 +10,20 @@
 
 <div>
 
-	<div id="contentS" style="justify-content:center;flex-wrap:wrap;max-width:100%;background-color:#e3e3e3;padding:5pt;">
+	<div id="contentS" class="boxShadow" style="justify-content:center;flex-wrap:wrap;max-width:100%;background-color:<?php echo $lightColor; ?>;padding:5pt;">
 
 		<div style="flex:1;display:flex;position:relative;">
-            <input id="searchString" type="text" placeholder="<?php echo $translation["search"]["search-placeholder"] ?? "What are you looking for?"; ?>" style="flex:1;height:25pt;font-size:20pt;padding:5pt;padding-right:35pt;border:3pt solid grey;width:100%;" />
-            <button style="position: absolute; right: 6pt; top: 50%; transform: translateY(-50%); height: 25pt;cursor:pointer;position:absolute;background-color:grey;padding:2pt 4pt 2pt 4pt;border-radius:10pt;text-align:center;color:#fff;font-family: 'Francois+One', sans-serif;border:0;" onclick="document.getElementById('searchString').value='';search()" id="lang-search-search-clear"><?php echo $translation["search"]["search-clear"] ?? "Clear"; ?></button>
+            <input id="searchString" type="text" placeholder="<?php echo $translation["search"]["search-placeholder"] ?? "What are you looking for?"; ?>" style="border-radius:10pt;flex:1;height:25pt;font-size:20pt;padding:5pt;padding-right:35pt;border:3pt solid <?php echo $darkColor; ?>;width:100%;" />
+            <button class="clearButton" style="position: absolute; right: 6pt; top: 50%; transform: translateY(-50%); height: 25pt;cursor:pointer;position:absolute;padding:2pt 4pt 2pt 4pt;border-radius:10pt;text-align:center;color:#fff;font-family: 'Francois+One', sans-serif;border:0;" onclick="document.getElementById('searchString').value='';search()" id="lang-search-search-clear"><?php echo $translation["search"]["search-clear"] ?? "Clear"; ?></button>
         </div>
 
 		<div style="flex: 1; display: flex; align-items: center; justify-content: center;margin-top:5pt;">
     		<div style="display: flex; align-items: center; justify-content: center;padding: 5pt 10pt 5pt 10pt;">
-				<select id="searchStringPattern" style="width: 80pt; height: 56px; font-size: 20pt; padding: 5pt; border: 3pt solid grey; margin-right: 10pt;">
+				<select id="searchStringPattern" style="width: 80pt; height: 56px; font-size: 20pt; padding: 5pt; border: 3pt solid <?php echo $darkColor; ?>; margin-right: 10pt;">
 					<option value="word" default id="lang-search-search-type-exact-word"><?php echo $translation["search"]["search-type-exact-word"] ?? "Exact word"; ?></option>
 					<option value="all" id="lang-search-search-type-all"><?php echo $translation["search"]["search-type-all"] ?? "All"; ?></option>
 				</select>
-				<button class="searchButton" style="align-items: center;padding-left:5pt;" onclick="search();"><img src="img/frog_g_72.webp" style="height:20pt;cursor: pointer;" /> <div  style="padding:13px;" id="lang-search-search-button"><?php echo $translation["search"]["search-button"] ?? "Search"; ?></div></button>
+				<button class="searchButton" style="align-items: center;padding-left:10pt;" onclick="search();"><img src="img/frog_g_72.webp" style="height:20pt;cursor: pointer;" /> <div  style="padding:13px;" id="lang-search-search-button"><?php echo $translation["search"]["search-button"] ?? "Search"; ?></div></button>
 
     		</div>
 		</div>
@@ -34,29 +34,34 @@
 
 </div>
 
-<p id="lang-overview-paragraph"><?php echo $translation["overview"]["paragraph"] ?? 'Click on a trip to see details. You can choose between <a href="#year-devision">year</a> and <a href="#country-devision">country</a> division.'; ?></p>
+<!--<div style="display:flex;gap:5pt;justify-content: center;margin-top:20pt;">
+	<button class="searchButton" style="align-items: center;"><div style="padding:13px;" id="lang-search-search-button">Year</div></button>
+	<button class="searchButton" style="align-items: center;"><div style="padding:13px;" id="lang-search-search-button">Country</div></button>
+</div>-->
+
+<p id="lang-overview-paragraph" style="text-align:center;"><?php echo $translation["overview"]["paragraph"] ?? 'Click on a trip to see details. You can choose between <a href="#year-devision">year</a> and <a href="#country-devision">country</a> division.'; ?></p>
+
 
 <style>
-.trip_table {
-  table-layout: fixed ;
-  width: 100% ;
+<?php
+foreach ( $trip_categories as $trip_category ) {
+	echo '.style_'.$trip_category.'{border:1px solid '.$trip_settings[$trip_category]["Color"].';background-color:'.$trip_settings[$trip_category]["Color"].';}'.PHP_EOL;
+	echo '.style_'.$trip_category.':hover{border:1px solid '.$trip_settings[$trip_category]["Color"].'CC;background-color:'.$trip_settings[$trip_category]["Color"].'CC;}'.PHP_EOL;
 }
-
-.trip_category {font-family: 'Francois+One', sans-serif;font-size:0.6em;padding:0.2em;margin-top:0.4em;text-align:left;color:#ffffff;cursor:pointer;border-radius:3pt;display:inline-block;}
-
+?>
 </style>
 
-<div id="tripCatCont">
+<div id="tripCatCont" class="roundBorder" style="text-align:center;padding:5pt;">
 <?php
 
 foreach ( $trip_categories as $trip_category ) {
 	if ( in_array($trip_category, array_column($tripBlocks, "TripType") ) ) {
-		echo '<div class="trip_category" style="border:1px solid '.$trip_settings[$trip_category]["Color"].';background-color:'.$trip_settings[$trip_category]["Color"].';" onclick="filter_cat(\''.$trip_category.'\')"><span id="mem_'.$trip_category.'">X</span> '.$trip_settings[$trip_category]["Description"].'</div> ';
+		echo '<div class="trip_category style_'.$trip_category.'" onclick="filter_cat(\''.$trip_category.'\')"><span id="mem_'.$trip_category.'">X</span> '.$trip_settings[$trip_category]["Description"].'</div> ';
 	}
 }
 
 foreach ( $travelGroups as $travelGroup ) {
-	echo '<div class="trip_category" style="border:1px solid #000;background-color:#000;" onclick="filter_cat(\''.preg_replace('/[^a-zA-Z0-9\-_\.]/', 'ao',$travelGroup).'\')"><span id="mem_'.preg_replace('/[^a-zA-Z0-9\-_\.]/', 'ao',$travelGroup).'">X</span> '.$travelGroup.'</div> ';
+	echo '<div class="trip_category style_cat" onclick="filter_cat(\''.preg_replace('/[^a-zA-Z0-9\-_\.]/', 'ao',$travelGroup).'\')"><span id="mem_'.preg_replace('/[^a-zA-Z0-9\-_\.]/', 'ao',$travelGroup).'">X</span> '.$travelGroup.'</div> ';
 }
 
 ?>
@@ -132,173 +137,188 @@ input.addEventListener('keydown', function(event) {
 });
 </script>
 
-<table class="trip_table" style="width:100%;">
+<div class="lightColor roundBorder boxShadow" style="padding:5pt;">
+	<div class="tripDivision roundBorderTop" id="lang-overview-division-year"><a name="year-devision"></a><?php echo $translation["overview"]["division-year"] ?? "Division: Year"; ?></div>
+	<div class="roundBorderBottom">
 
-<tr><td class="trip_table_division" colspan="10" style="background-color:#000000;color:#ffffff;text-align:center;" id="lang-overview-division-year"><a name="year-devision"></a><?php echo $translation["overview"]["division-year"] ?? "Division: Year"; ?></td></tr>
+		<table class="trip_table" cellspacing="0" style="margin-top:1pt;">
 
-<?php
+			<?php
 
-//Skapa årsarray och bryt vid var tioende
+			//Skapa årsarray och bryt vid var tioende
 
-$years=[];
+			$years=[];
 
-for ($x = 0; $x < substr($min_year,3,1); $x++) {
- $years[]="";
-}
-
-for ($x = $min_year; $x <= $max_year; $x++) {
-  $years[]=$x;
-}
-
-$years=array_chunk($years, 10);
-
-foreach ($years as $decade) {
-	if (substr($decade[0],2,2)!="") { $decade_title=substr($decade[0],2,2); } else { $decade_title=substr($min_year,2,1)."0"; }
-	echo '<tr><td class="trip_table_division" colspan="10" style="text-align:center;font-weight:bold;border:0.2em solid #000000;">'.$decade_title.'<span id="lang-overview-century">'.($translation["overview"]["century"] ?? "s").'</span></td></tr>';
-	echo '<tr style="vertical-align:top;">';
-	foreach ($decade as $year) {
-		echo '<td style="text-align:center;">'.$year;
-
-		foreach ($tripBlocks as $tripBlock) {
-			if (substr($tripBlock["DepartureDate"],0,4)==$year) {
-
-				$trip_color = $trip_settings[$tripBlock["TripType"]]["Color"];
-
-				// ### Räkna antalet länder
-				// Ta bort innehåll i hakparenteser och hakparenteserna själva
-				$total_countries = preg_replace("/\[[^)]+\]/","",$tripBlock["CountryTripMovements"]);
-
-				// Ta bort vanliga parenteser
-				$total_countries = str_replace('(','',$total_countries);
-				$total_countries = str_replace(')','',$total_countries);
-
-				// Ta bort dubbla mellanslag
-				$total_countries = str_replace('  ',' ',$total_countries);
-
-				// Dela upp element
-				$total_array = explode(',',$total_countries);
-
-				// Ta bort dubbletter
-				$total_array = array_unique($total_array);
-
-				// Ta bort element som börjar med DK, SE eller NOD eller STO
-				$patterns = '/SE|DK|NOD|STO|Sverige/';
-				foreach ($total_array as $key => $value) {
-					if (preg_match($patterns, $value)) {
-						unset($total_array[$key]);
-					}
-				}
-
-				//Räkna antalet element
-				$amount_countries = count($total_array);
-				echo '<a href="trip.php?id='.urlencode($tripBlock["TripID"]).'" class="type_'.$tripBlock["TripType"].' type_'.preg_replace('/[^a-zA-Z0-9\-_\.]/', 'ao',$tripBlock["TravelGroup"]).'"><div id="'.$tripBlock["TripID"].'" style="font-size:0.5em;padding:0.2em;margin-top:0.4em;text-align:left;border:1px solid '.$trip_color.';background-color:'.$trip_color.';color:#ffffff;cursor:pointer;border-radius:3pt;"><b>(+'.$amount_countries.')</b> '.$tripBlock["TripID"].' '.$tripBlock["OverallDestination"].'</div></a>';
-
+			for ($x = 0; $x < substr($min_year,3,1); $x++) {
+			$years[]="";
 			}
-		}
-		echo '</td>';
-	}
-	echo '</tr>';
-}
 
-?>
+			for ($x = $min_year; $x <= $max_year; $x++) {
+			$years[]=$x;
+			}
+
+			$years=array_chunk($years, 10);
+
+			foreach ($years as $decade) {
+				if (substr($decade[0],2,2)!="") { $decade_title=substr($decade[0],2,2); } else { $decade_title=substr($min_year,2,1)."0"; }
+				echo '<tr><td class="trip_table_division" colspan="10" style="text-align:center;font-weight:bold;">'.$decade_title.'<span id="lang-overview-century">'.($translation["overview"]["century"] ?? "s").'</span></td></tr>';
+				echo '<tr style="vertical-align:top;">';
+				foreach ($decade as $year) {
+					echo '<td style="text-align:center;">'.$year;
+
+					foreach ($tripBlocks as $tripBlock) {
+						if (substr($tripBlock["DepartureDate"],0,4)==$year) {
+
+							$trip_color = $trip_settings[$tripBlock["TripType"]]["Color"];
+
+							// ### Räkna antalet länder
+							// Ta bort innehåll i hakparenteser och hakparenteserna själva
+							$total_countries = preg_replace("/\[[^)]+\]/","",$tripBlock["CountryTripMovements"]);
+
+							// Ta bort vanliga parenteser
+							$total_countries = str_replace('(','',$total_countries);
+							$total_countries = str_replace(')','',$total_countries);
+
+							// Ta bort dubbla mellanslag
+							$total_countries = str_replace('  ',' ',$total_countries);
+
+							// Dela upp element
+							$total_array = explode(',',$total_countries);
+
+							// Ta bort dubbletter
+							$total_array = array_unique($total_array);
+
+							// Ta bort element som börjar med DK, SE eller NOD eller STO
+							$patterns = '/SE|DK|NOD|STO|Sverige/';
+							foreach ($total_array as $key => $value) {
+								if (preg_match($patterns, $value)) {
+									unset($total_array[$key]);
+								}
+							}
+
+							//Räkna antalet element
+							$amount_countries = count($total_array);
+							echo '<a href="trip.php?id='.urlencode($tripBlock["TripID"]).'" class="type_'.$tripBlock["TripType"].' type_'.preg_replace('/[^a-zA-Z0-9\-_\.]/', 'ao',$tripBlock["TravelGroup"]).'"><div id="'.$tripBlock["TripID"].'" style="font-size:0.5em;padding:0.2em;margin-top:0.4em;text-align:left;color:#ffffff;cursor:pointer;border-radius:3pt;" class="style_'.$tripBlock["TripType"].'"><b>(+'.$amount_countries.')</b> '.$tripBlock["TripID"].' '.$tripBlock["OverallDestination"].'</div></a>';
+
+						}
+					}
+					echo '</td>';
+				}
+				echo '</tr>';
+			}
+
+			?>
+		</table>
 
 
 
-<tr><td class="trip_table_division" colspan="10" style="background-color:#000000;color:#ffffff;text-align:center;"  id="lang-overview-division-country"><a name="country-devision"></a><?php echo $translation["overview"]["division-country"] ?? "Division: Country"; ?></td></tr>
+		</div>
+	</div>
 
-<?php
+	<div class="lightColor roundBorder boxShadow" style="margin-top:5pt;padding:5pt;">
+		<div class="tripDivision roundBorderTop" id="lang-overview-division-country"><a name="country-devision"></a><?php echo $translation["overview"]["division-country"] ?? "Division: Country"; ?></div>
+		<div class="roundBorderBottom">
 
-//SORTERA FRAM NAMNEN PÅ LÄNDERNA I URVALET
+		<table class="trip_table" cellspacing="0" style="margin-top:1pt;">
+			<tr></td></tr>
 
-$country_active=[];
-foreach ($tripBlocks as $tripBlock) {
-	// Ta bort innehåll i hakparenteser och hakparenteserna själva
-	$tripBlock["CountryTripMovements"] = preg_replace("/\[[^)]+\]/","",$tripBlock["CountryTripMovements"]);
+			<?php
 
-	$temp=explode(",",$tripBlock["CountryTripMovements"]);
-	foreach ($temp as $temp2) {
-		if (strpos($temp2, 'SE') === false && strpos($temp2, 'NOD') === false && strpos($temp2, 'STO') === false && strpos($temp2, 'DK') === false ) {
-			$temp2=str_replace("[","",$temp2);
-			$temp2=str_replace("]","",$temp2);
-			$temp2=str_replace("(","",$temp2);
-			$temp2=str_replace(")","",$temp2);
-			$country_active[]=trim($temp2);
-		}
-	}
-}
-$country_active=array_unique($country_active);
-sort($country_active);
-//print_r($country_active);
+			//SORTERA FRAM NAMNEN PÅ LÄNDERNA I URVALET
 
-$countries_array=[];
-
-//Sorterar fram aktuellt urval
-foreach ($countries_array_original as $worldpart => $country2) {
-foreach ($country2 as $country) {
-	if (in_array($country,$country_active)) { $countries_array[$worldpart][]=$country; }
-}
-
-
-//print_r($countries_array);
-
-}
-
-$cont=0;
-$keys=array_keys($countries_array);
-foreach ($countries_array as $continent) {
-	echo '<tr><td class="trip_table_division" colspan="10" style="text-align:center;font-weight:bold;border:0.2em solid #000000;">'.$keys[$cont].'</td></tr>';
-	$columns=5; //Ändra även colspan nedan, 10 måste vara delbart med talet till vänster och talet nedan
-	$counter=0;
-	$open_loop=false;
-	foreach ($continent as $country) {
-		if ($open_loop==false) { echo '<tr>'; $open_loop=true; }
-		echo '<td colspan="2" style="text-align:center;vertical-align:top;;"><div class="trip_table_country_category">'.$country.'</div>';
+			$country_active=[];
 			foreach ($tripBlocks as $tripBlock) {
-
-				$trip_color = $trip_settings[$tripBlock["TripType"]]["Color"];
-
-				// ### Räkna antalet länder
 				// Ta bort innehåll i hakparenteser och hakparenteserna själva
-				$total_countries = preg_replace("/\[[^)]+\]/","",$tripBlock["CountryTripMovements"]);
+				$tripBlock["CountryTripMovements"] = preg_replace("/\[[^)]+\]/","",$tripBlock["CountryTripMovements"]);
 
-				// Ta bort vanliga parenteser
-				$total_countries = str_replace('(','',$total_countries);
-				$total_countries = str_replace(')','',$total_countries);
-
-				// Ta bort dubbla mellanslag
-				$total_countries = str_replace('  ',' ',$total_countries);
-
-				// Dela upp element
-				$total_array = explode(',',$total_countries);
-
-				// Ta bort dubbletter
-				$total_array = array_unique($total_array);
-
-				// Ta bort element som börjar med DK, SE eller NOD eller STO
-				$patterns = '/\{SE\}|\{DK\}|\{NOD\}|\{STO\}|Sverige/';
-				foreach ($total_array as $key => $value) {
-					if (preg_match($patterns, $value)) {
-						unset($total_array[$key]);
+				$temp=explode(",",$tripBlock["CountryTripMovements"]);
+				foreach ($temp as $temp2) {
+					if (strpos($temp2, 'SE') === false && strpos($temp2, 'NOD') === false && strpos($temp2, 'STO') === false && strpos($temp2, 'DK') === false ) {
+						$temp2=str_replace("[","",$temp2);
+						$temp2=str_replace("]","",$temp2);
+						$temp2=str_replace("(","",$temp2);
+						$temp2=str_replace(")","",$temp2);
+						$country_active[]=trim($temp2);
 					}
 				}
-
-				//Räkna antalet element
-				$amount_countries = count($total_array);
-
-
-				if (strpos(preg_replace("/\[[^)]+\]/","",$tripBlock["CountryTripMovements"]),$country) !== false) { echo '<a href="trip.php?id='.urlencode($tripBlock["TripID"]).'" class="type_'.$tripBlock["TripType"].' type_'.preg_replace('/[^a-zA-Z0-9\-_\.]/', 'ao',$tripBlock["TravelGroup"]).'"><div style="font-size:0.5em;padding:0.2em;margin-top:0.4em;text-align:left;border:1px solid '.$trip_color.';background-color:'.$trip_color.';color:#ffffff;cursor:pointer;border-radius:3pt;">'.substr($tripBlock["DepartureDate"],0,4).' <b>(+'.$amount_countries.')</b> '.$tripBlock["TripID"].' '.$tripBlock["OverallDestination"].'</div></a>'; }
 			}
-		echo '</td>';
-		$counter+=1;
-		if ($counter % $columns == 0) { echo '</tr>'; $open_loop==false; }
-	}
-	echo '</tr>';
-	$cont+=1;
-}
+			$country_active=array_unique($country_active);
+			sort($country_active);
+			//print_r($country_active);
 
-?>
+			$countries_array=[];
 
-</table>
+			//Sorterar fram aktuellt urval
+			foreach ($countries_array_original as $worldpart => $country2) {
+			foreach ($country2 as $country) {
+				if (in_array($country,$country_active)) { $countries_array[$worldpart][]=$country; }
+			}
+
+
+			//print_r($countries_array);
+
+			}
+
+			$cont=0;
+			$keys=array_keys($countries_array);
+			foreach ($countries_array as $continent) {
+				echo '<tr><td class="trip_table_division" colspan="10" style="text-align:center;font-weight:bold;">'.$keys[$cont].'</td></tr>';
+				$columns=5; //Ändra även colspan nedan, 10 måste vara delbart med talet till vänster och talet nedan
+				$counter=0;
+				$open_loop=false;
+				foreach ($continent as $country) {
+					if ($open_loop==false) { echo '<tr>'; $open_loop=true; }
+					echo '<td colspan="2" style="text-align:center;vertical-align:top;;"><div class="trip_table_country_category">'.$country.'</div>';
+						foreach ($tripBlocks as $tripBlock) {
+
+							$trip_color = $trip_settings[$tripBlock["TripType"]]["Color"];
+
+							// ### Räkna antalet länder
+							// Ta bort innehåll i hakparenteser och hakparenteserna själva
+							$total_countries = preg_replace("/\[[^)]+\]/","",$tripBlock["CountryTripMovements"]);
+
+							// Ta bort vanliga parenteser
+							$total_countries = str_replace('(','',$total_countries);
+							$total_countries = str_replace(')','',$total_countries);
+
+							// Ta bort dubbla mellanslag
+							$total_countries = str_replace('  ',' ',$total_countries);
+
+							// Dela upp element
+							$total_array = explode(',',$total_countries);
+
+							// Ta bort dubbletter
+							$total_array = array_unique($total_array);
+
+							// Ta bort element som börjar med DK, SE eller NOD eller STO
+							$patterns = '/\{SE\}|\{DK\}|\{NOD\}|\{STO\}|Sverige/';
+							foreach ($total_array as $key => $value) {
+								if (preg_match($patterns, $value)) {
+									unset($total_array[$key]);
+								}
+							}
+
+							//Räkna antalet element
+							$amount_countries = count($total_array);
+
+
+							if (strpos(preg_replace("/\[[^)]+\]/","",$tripBlock["CountryTripMovements"]),$country) !== false) { echo '<a href="trip.php?id='.urlencode($tripBlock["TripID"]).'" class="type_'.$tripBlock["TripType"].' type_'.preg_replace('/[^a-zA-Z0-9\-_\.]/', 'ao',$tripBlock["TravelGroup"]).'"><div style="font-size:0.5em;padding:0.2em;margin-top:0.4em;text-align:left;color:#ffffff;cursor:pointer;border-radius:3pt;" class="style_'.$tripBlock["TripType"].'">'.substr($tripBlock["DepartureDate"],0,4).' <b>(+'.$amount_countries.')</b> '.$tripBlock["TripID"].' '.$tripBlock["OverallDestination"].'</div></a>'; }
+						}
+					echo '</td>';
+					$counter+=1;
+					if ($counter % $columns == 0) { echo '</tr>'; $open_loop==false; }
+				}
+				echo '</tr>';
+				$cont+=1;
+			}
+
+			?>
+
+			</table>
+
+	</div>
+</div>
+
 
 
 <?php include '_foot.php'; ?>

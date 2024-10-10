@@ -6,7 +6,7 @@
 	include 'dep/chartjs/chartjs.php';
 
 ?>
-<div style="margin:10pt;">
+<div style="margin:0 5pt 0 5pt;">
 <?php
 
 echo '<h1 class="normal" id="lang-statistics-title">'.($translation["statistics"]["title"] ?? "Statistics").'</h1>';
@@ -110,9 +110,8 @@ foreach ( $settings["trip-categories"] as $tripType ) {
 	</div>
 </div>
 
-<div style="width:400pt;margin:auto;max-width:100%;">
-<canvas id="statOverview"></canvas>
-</div>
+<canvas id="statOverview" style="width:400pt;max-width:100%;margin:auto;"></canvas>
+
 
 <br />
 <script>
@@ -148,7 +147,7 @@ echo '<div style="text-align:center;margin-bottom:20pt;"><h2>'.($translation["st
 echo '<div style="overflow-x: clip;">';
 echo '<table style="border-collapse: collapse;" id="visitsPerCountry">';
 
-echo '<thead style="position:sticky;top:0;background-color:#fff;">';
+echo '<thead style="position:sticky;top:0;background-color:'.$bodyBackgroundColor.';">';
 echo '<tr style="font-weight:normal;"><td></td><td colspan="3"><i>'.($translation["statistics"]["1-qualified"] ?? "One qualified visit per trip").'</i></td><td><i>'.($translation["statistics"]["many-qualified"] ?? "More than one qualified visit per trip").'</i></td><td><i>'.($translation["statistics"]["border-crossings"] ?? "Border crossings (in and out)").'</i></td></tr>';
 echo '<tr><td><b>'.($translation["statistics"]["country"] ?? "Country").'</b></td><td><b>'.($translation["statistics"]["ordinary-length"] ?? "Ordinary length").'</b></td><td><b>'.($translation["statistics"]["shorter-stop"] ?? "Shorter stop incl.").'</b></td><td><b>'.($translation["statistics"]["short-very-short"] ?? "Shorter and very short stop incl.").'</b></td><td><b>'.($translation["statistics"]["ordinary-length"] ?? "Ordinary length").'</b></td><td><b>'.($translation["statistics"]["minimal-number"] ?? "Minimal number").'</b></td></tr>';
 echo '</thead>';
@@ -186,7 +185,7 @@ echo '</div>';
 ?>
 
 
-<div id="statComment" style="padding:10pt;font-family: 'Francois+One', sans-serif;margin-top:10pt;">
+<div id="statComment" class="roundBorder" style="padding:10pt;font-family: 'Francois+One', sans-serif;margin-top:10pt;">
 <?php echo ($translation["statistics"]["note"] ?? "All columns display visits of significant importance. The actual number of border crossings may therefore
 be greater than reported. Stops that are crucial for the travel experience are considered significant.
 A qualified visit is defined as a visit that does not resume a previous visit after a break caused by a
@@ -196,18 +195,18 @@ short or very short visit to another country."); ?>
 
 <?php
 
-echo '<div style="text-align:center;"><h2>'.($translation["statistics"]["visit-country-count"] ?? "Number of overnight stays per country").'</h2>';
+echo '<div style="text-align:center;"><h2>'.($translation["statistics"]["overnight-stays-country"] ?? "Number of overnight stays per country").'</h2>';
 
-echo '<div style="margin-top:10pt;margin-bottom:10pt;"><b>'.($translation["statistics"]["top-ten-countries"] ?? "Top ten countries").'</b></div><div style="width:425pt;max-width:100%;margin:auto;"><canvas id="statPerCountry"></canvas></div>';
+echo '<div style="margin-top:10pt;margin-bottom:10pt;"><b>'.($translation["statistics"]["top-ten-countries"] ?? "Top ten countries").'</b></div><canvas id="statPerCountry" style="width:425pt;max-width:100%;margin:auto;"></canvas>';
 
 echo '</div>';
 
 //echo '<div style="overflow:hidden;overflow-x: auto;">';
-echo '<table style="margin:auto;margin-top:20pt;" id="nightPerCountry">';
-echo '<thead style="position:sticky;top:0;background-color:#fff;"><tr style=""><td><b>'.($translation["statistics"]["country"] ?? "Country").'</b></td><td><b>'.($translation["statistics"]["overnight-stays"] ?? "Number of overnight stays").'</b></td></tr></thead>';
+echo '<table style="margin:auto;margin-top:20pt;" cellspacing="0" id="nightPerCountry">';
+echo '<thead style="position:sticky;top:0;background-color:'.$bodyBackgroundColor.'"><tr style=""><td><b>'.($translation["statistics"]["country"] ?? "Country").'</b></td><td><b>'.($translation["statistics"]["overnight-stays"] ?? "Overnights").'</b></td></tr></thead>';
 
 foreach ( $accommodation_countries as $accommodation_country => $value ) {
-	if ( $value != 0) { echo '<tr><td>'.$accommodation_country.'</b></td><td>'.$value.'</td></tr>'."\n"; }
+	if ( $value != 0) { echo '<tr><td>'.$accommodation_country.'</b></td><td style="text-align:center;">'.$value.'</td></tr>'."\n"; }
 }
 
 echo '</table>';
@@ -237,7 +236,7 @@ foreach ( $accommodation_countries as $accommodation_country => $value ) {
         label: 'Number of overnight stays',
         data: [<?php echo $chartDataPC; ?>],
 		backgroundColor: [
-			'grey'
+			'<?php echo $darkColor; ?>'
         ],
         borderWidth: 1
       }],

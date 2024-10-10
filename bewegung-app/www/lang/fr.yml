@@ -90,13 +90,14 @@ statistics:
   country: Pays
   overnight-stays: Nombre de nuitées
 
-sync:
-  title: Synchronisation
+dataset:
+  title: Base de données
   first-pg: Téléchargez vos dernières notes de voyage depuis Google Sheets. Vous devez être connecté dès le début pour effectuer les actions ci-dessous. Aucune information d'authentification ne sera envoyée à l'application.
   second-pg: Votre identifiant Google Spreadsheet selon votre configuration
   third-pg: Mettez à jour vos fichiers manuellement en <b>cliquant droit</b> sur les boutons ci-dessous et en enregistrant les fichiers dans le dossier <b>data</b>.
-  other-options: Autres options
   other-options-text: "Il n'y a actuellement pas d'intégration automatique, mais il est possible de la développer vous-même en utilisant l'API Google Sheet activée dans la console Google Cloud.<br /><br />Si vous utilisez Microsoft 365 ou une installation locale de Microsoft Office, LibreOffice ou similaire, vous pouvez enregistrer des fichiers TSV directement dans le dossier <b>data</b> avec les noms suivants."
+  toggle: Basculer entre table/outil de coordonnées
+  copy-coordinates: Copier les coordonnées
 
 about:
   title: À propos

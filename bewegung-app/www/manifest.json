@@ -3,7 +3,7 @@
   "short_name": "IIB",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#e3e3e3",
+  "background_color": "#000000",
   "icons": [
     {
       "src": "favicon.webp",

@@ -5,7 +5,7 @@
   include '_head.php';
 ?>
 <div style="margin:10pt;text-align:center;">
-<div><img src="img/frog_g_150.webp" style="margin-top:40pt;" /></div>
+<div><img src="img/frog_g_150.webp" style="margin-top:40pt;margin-bottom:10pt;" /></div>
 
 <div id="update"></div>
 
@@ -27,9 +27,9 @@
       });
     </script>
 
-<h1 class="normal" style="margin-bottom:10pt;" id="lang-about-title"><?php echo $translation["about"]["title"] ?? "About"; ?></h1>
-<h1 class="normal" style="margin-top:0;font-size:16pt;"><?php include 'version'; ?></h1>
-<p style="line-height:26pt;"><span class="immer-in-font-uc">Immer in</span>&nbsp;<span class="bewegung-font-uc">Bewegung</span> <span id="lang-about-description"><?php echo $translation["about"]["description"] ?? "is your open source, lightweight, and future proof travel documentation app."; ?></span></p>
+<h1 class="normal" id="lang-about-title" style="line-height:1em;margin:0 !important;"><?php echo $translation["about"]["title"] ?? "About"; ?></h1>
+<div style="margin-top:0;font-size:16pt;font-family: 'Cairo', sans-serif;font-weight:bold;"><?php include 'version'; ?></div>
+<p style="line-height:18pt;"><span class="immer-in-font-uc">Immer in</span>&nbsp;<span class="bewegung-font-uc">Bewegung</span> <span id="lang-about-description"><?php echo $translation["about"]["description"] ?? "is your open source, lightweight, and future proof travel documentation app."; ?></span></p>
 <p><span id="lang-about-update"><?php echo $translation["about"]["update"] ?? "Check for updates at"; ?> </span> <b><a target="_blank" href="https://bewegung.app/">bewegung.app</a></b>.</p>
 
 <?php

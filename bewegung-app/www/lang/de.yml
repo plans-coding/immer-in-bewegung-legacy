@@ -88,15 +88,16 @@ statistics:
   overnight-stays-country: Anzahl der Übernachtungen pro Land
   top-ten-countries: Top zehn
   country: Land
-  overnight-stays: Anzahl der Übernachtungen
+  overnight-stays: Übernachtungen
 
-sync:
-  title: Sync
+dataset:
+  title: Datengrundlage
   first-pg: Lade deine neuesten Reisetagebucheinträge aus Google Sheet herunter. Du musst von Anfang an eingeloggt sein, um die untenstehenden Aktionen durchzuführen. Keine Authentifizierungsinformationen werden an die App gesendet.
   second-pg: Deine Google Spreadsheet-ID laut deiner Konfiguration
   third-pg: Aktualisiere deine Dateien manuell, indem du mit <b>Rechtsklick</b> auf die Schaltflächen unten klickst und die Dateien in den Ordner <b>data</b> speicherst.
-  other-options: Weitere Optionen
-  other-options-text: Derzeit gibt es keine automatische Integration, aber es ist möglich, sie mit Hilfe der Google Sheet API, die in der Google Cloud Console aktiviert wird, selbst zu erstellen.<br /><br />Wenn du Microsoft 365 oder eine lokale Installation von Microsoft Office, LibreOffice oder Ähnlichem verwendest, kannst du TSV-Dateien direkt in den Ordner <b>data</b> mit den folgenden Namen speichern.
+  other-options-text: Wenn du Microsoft 365 oder eine lokale Installation von Microsoft Office, LibreOffice oder Ähnlichem verwendest, kannst du TSV-Dateien direkt in den Ordner <b>data</b> mit den folgenden Namen speichern.
+  toggle: Zwischen Tabelle/Koordinatenwerkzeug umschalten
+  copy-coordinates: Koordinaten kopieren
 
 about:
   title: Über

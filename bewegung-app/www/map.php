@@ -6,7 +6,7 @@
     $noFoot = true;
     include '_head.php';
 
-    $color = "grey";
+    $color = $darkColor;
 ?>
 
 <?php
@@ -42,7 +42,7 @@ $period = array_unique($tripNumbers);
 sort($period);
 
 
-$dropdown = '<select name="country_dd" id="country_dd" style="max-width:100%;font-size:16pt;padding:5pt;border:3pt solid grey;display:inline-block;" onchange="document.location=this.value">';
+$dropdown = '<select name="country_dd" id="country_dd" style="max-width:100%;border-radius:10pt;font-size:16pt;padding:5pt;border:3pt solid '.$darkColor.';display:inline-block;background-color:'.$bodyBackgroundColor.';" onchange="document.location=this.value">';
 
 
 $selected = "";
@@ -67,7 +67,7 @@ $dropdown.='</select>';
 
 ?>
 
-<div class="imagesBar">
+<div class="bar imagesBar" style="background-color:<?php echo $lightColor; ?>">
     <div style="flex:1;text-align:center;max-width:100%;">
         <?php echo $dropdown; ?>
     </div>

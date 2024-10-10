@@ -23,7 +23,7 @@ substr($_GET["date"],6,2).
 substr($_GET["date"],0,4).'-'.
 substr($_GET["date"],4,2).'-'.
 substr($_GET["date"],6,2).
-'T23%3A59%3A59.999Z%22%7D';
+'T23%3A59%3A59.999Z%22%7D&ref=iib';
 
 //### Ta fram datum som hör till resa
 
@@ -35,7 +35,7 @@ $period = new DatePeriod(
      (new DateTime($tripBlocks[$_GET["trip"]]["ReturnDate"]))->modify('+1 day') //Slutdatum
 );
 
-$dropdown='<select name="date_dd" id="date_dd" style="font-size:16pt;padding:5pt;border:3pt solid grey;display:inline-block;" onchange="document.location=\'?trip='.$_GET["trip"].'&date=\'+this.value">';
+$dropdown='<select name="date_dd" id="date_dd" style="font-size:16pt;padding:5pt;border:3pt solid '.$darkColor.';background-color:'.$lightColor.';display:inline-block;" onchange="document.location=\'?trip='.$_GET["trip"].'&date=\'+this.value">';
 foreach ($period as $key => $value) {
 	if ($value->format('Ymd') == $_GET["date"] ) { $selected="selected"; } else { $selected=""; }
 	$dropdown.='<option value="'.$value->format('Ymd').'" '.$selected.'>'.$value->format('Y-m-d').'</option>'."\n";
@@ -56,7 +56,7 @@ $i++;
 
 ?>
 
-<div class="imagesBar">
+<div class="bar imagesBar">
     <div style="display: flex; align-items: center; flex: 1;">
         <?php
             if ($prev!="") {
