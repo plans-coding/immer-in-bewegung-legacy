@@ -18,6 +18,7 @@
         body{margin: 0;padding: 0;font-family: 'Merriweather', serif;height:100%;font-size:1.2em;}
         .searchButton {font-family: 'Francois+One', sans-serif;font-size:18pt;background-color:grey;color:#fff;display:flex;cursor:pointer;border:0;}
         .searchButton:hover {background-color:#b3b3b3;}
+        .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out{font-size:20pt;}
 
         /* ##### ANNAN CSS FÖR DARK MODE ##### */
         @media (prefers-color-scheme: dark) {
@@ -26,6 +27,14 @@
             body {color:#fff !important;}
             input[type="text"] {background-color:#444 !important;color:#fff;}
             .searchButton {background-color:grey;}
+
+                        /* Leaflet */
+            .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out{color:#fff;background-color:#000 !important;}
+            .leaflet-control-fullscreen a {background: #FFD2D2 url('fullscreen.png') no-repeat 0 0;filter: invert(1);}
+            .leaflet-container .leaflet-control-attribution{background-color:#000 !important;color:#fff;}
+            .leaflet-container .leaflet-control-attribution a{color:#fff !important;}
+            .leaflet-popup-content-wrapper, .leaflet-popup-tip {background-color:#000!important;color:#fff !important;}
+            
         }
         /* ##### ANNAN CSS FÖR DARK MODE ##### */
 
