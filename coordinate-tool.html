@@ -18,14 +18,14 @@
         body{margin: 0;padding: 0;font-family: 'Merriweather', serif;height:100%;font-size:1.2em;}
         .searchButton {font-family: 'Francois+One', sans-serif;font-size:18pt;background-color:grey;color:#fff;display:flex;cursor:pointer;border:0;}
         .searchButton:hover {background-color:#b3b3b3;}
-        .leaflet-control-geocoder-form input {font-size:20pt;}
+        .leaflet-control-geocoder-form input {font-size: 20pt !important;padding: 5pt !important;border: 3pt solid grey;}
 
         /* ##### ANNAN CSS FÖR DARK MODE ##### */
         @media (prefers-color-scheme: dark) {
             a {color:#07ad67;}
             body {background-color:#000 !important;}
             body {color:#fff !important;}
-            input[type="text"] {background-color:#444 !important;color:#fff;font-size: 20pt;padding: 5pt;border: 3pt solid grey;}
+            input[type="text"] {background-color:#444 !important;color:#fff;}
             .searchButton {background-color:grey;}
 
             /* Leaflet */
