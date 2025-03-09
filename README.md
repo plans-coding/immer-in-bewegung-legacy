@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This project has been replaced by https://github.com/plans-coding/immer-in-bewegung
+
 # Immer in Bewegung 
 Open source travel documentation app for self-hosting
 
